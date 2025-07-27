@@ -2,7 +2,7 @@
 
 A comprehensive template for **PDD (Prompt Driven Design)** specifically adapted for Cursor, providing a complete framework for AI-assisted development.
 
-> **PDD is 10x better than prompt engineering and 100x better than vibe coding.**
+> **PDD is much better than prompt engineering and vibe coding.**
 
 ## 🚀 Quick Start
 
@@ -59,6 +59,89 @@ edit FEATURE_REQUEST.md
 - **Optimized** for modern AI-assisted development workflows
 - **International** and accessible to global developers
 - Like having a complete development team with specialized roles
+
+## 📋 What is a PRP (Product Requirements Prompt)?
+
+A **PRP (Product Requirements Prompt)** is the core deliverable of the PDD methodology. Think of it as a comprehensive blueprint that an AI assistant can follow to implement a feature or system.
+
+### PRP vs Traditional PRD
+
+**Traditional PRD (Product Requirements Document):**
+- Written for human developers
+- High-level requirements and specifications
+- Requires interpretation and implementation decisions
+- Often needs clarification and back-and-forth
+
+**PRP (Product Requirements Prompt):**
+- Written specifically for AI assistants
+- Includes complete implementation context
+- Contains executable validation commands
+- Provides step-by-step implementation guidance
+- Self-contained and actionable
+
+### What Makes a Good PRP?
+
+A comprehensive PRP includes:
+
+1. **Complete Context**
+   - Project background and architecture
+   - Existing code patterns and conventions
+   - Technical constraints and requirements
+
+2. **Detailed Specifications**
+   - Exact functionality requirements
+   - API specifications and data models
+   - User interface requirements
+
+3. **Implementation Plan**
+   - Step-by-step development process
+   - File structure and organization
+   - Code patterns to follow
+
+4. **Validation Commands**
+   - Executable test commands
+   - Quality checks and linting
+   - Performance benchmarks
+
+5. **Success Criteria**
+   - Clear definition of "done"
+   - Measurable outcomes
+   - Acceptance criteria
+
+### Example PRP Structure
+
+```markdown
+# PRP: User Authentication System
+
+## Context
+- Project: E-commerce platform
+- Tech Stack: FastAPI, PostgreSQL, JWT
+- Existing patterns: examples/auth/
+
+## Requirements
+- User registration with email validation
+- JWT-based authentication
+- Password reset functionality
+
+## Implementation Steps
+1. Create user model with SQLAlchemy
+2. Implement registration endpoint
+3. Add JWT token generation
+4. Create authentication middleware
+
+## Validation Commands
+```bash
+pytest tests/test_auth.py -v
+ruff check src/auth/
+mypy src/auth/
+```
+
+## Success Criteria
+- [ ] Registration endpoint returns 201
+- [ ] Login generates valid JWT
+- [ ] All tests pass
+- [ ] Code coverage >90%
+```
 
 ## 🎯 Evolution and Inspiration
 
@@ -152,11 +235,19 @@ Use the prompt:
 "Generate a PRP following the project rules, taking as reference FEATURE_REQUEST.md and examples in examples/"
 ```
 
+The AI will create a comprehensive **Product Requirements Prompt** that includes:
+- Complete implementation context
+- Step-by-step development plan
+- Validation commands
+- Success criteria
+
 ### 4. Execute Implementation
 Use the prompt:
 ```
 "Execute the PRP in PRPs/your-feature.md following all validations"
 ```
+
+The AI will follow the PRP blueprint to implement the feature, running validations at each step and ensuring all success criteria are met.
 
 ## 🎭 Role System
 
