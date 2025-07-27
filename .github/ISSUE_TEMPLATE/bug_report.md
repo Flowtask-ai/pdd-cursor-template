@@ -6,35 +6,35 @@ labels: ['bug', 'pdd-template']
 assignees: ''
 ---
 
-## 🐛 Descripción del Bug
+## 🐛 Bug Description
 
-Una descripción clara y concisa del bug.
+A clear and concise description of the bug.
 
-## 🔄 Pasos para Reproducir
+## 🔄 Steps to Reproduce
 
-1. Ve a '...'
-2. Haz clic en '....'
-3. Desplázate hacia abajo hasta '....'
-4. Ver error
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
 
-## ✅ Comportamiento Esperado
+## ✅ Expected Behavior
 
-Una descripción clara de lo que esperabas que sucediera.
+A clear description of what you expected to happen.
 
-## 📸 Capturas de Pantalla
+## 📸 Screenshots
 
-Si es aplicable, agrega capturas de pantalla para ayudar a explicar tu problema.
+If applicable, add screenshots to help explain your problem.
 
-## 🖥️ Información del Sistema
+## 🖥️ System Information
 
-- **OS**: [ej. macOS, Windows, Linux]
-- **Cursor Version**: [ej. 0.1.0]
-- **PDD Template Version**: [ej. 1.0.0]
+- **OS**: [e.g. macOS, Windows, Linux]
+- **Cursor Version**: [e.g. 0.1.0]
+- **PDD Template Version**: [e.g. 1.0.0]
 
-## 📝 Contexto Adicional
+## 📝 Additional Context
 
-Agrega cualquier otro contexto sobre el problema aquí.
+Add any other context about the problem here.
 
-## 🔧 Solución Propuesta (Opcional)
+## 🔧 Proposed Solution (Optional)
 
-Si tienes una idea de cómo solucionarlo, compártela aquí. 
+If you have an idea of how to fix it, share it here. 

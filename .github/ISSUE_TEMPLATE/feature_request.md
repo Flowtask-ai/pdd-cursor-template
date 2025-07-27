@@ -6,34 +6,34 @@ labels: ['enhancement', 'pdd-template']
 assignees: ''
 ---
 
-## 🎯 Descripción de la Característica
+## 🎯 Feature Description
 
-Una descripción clara y concisa de la característica que te gustaría ver implementada.
+A clear and concise description of the feature you would like to see implemented.
 
-## 🔍 Problema que Resuelve
+## 🔍 Problem it Solves
 
-Una descripción clara del problema que esta característica resolvería.
+A clear description of the problem this feature would solve.
 
-## 💡 Solución Propuesta
+## 💡 Proposed Solution
 
-Una descripción clara de la solución que propones.
+A clear description of the solution you propose.
 
-## 🔄 Alternativas Consideradas
+## 🔄 Alternatives Considered
 
-Una descripción de cualquier solución alternativa o característica que hayas considerado.
+A description of any alternative solutions or features you have considered.
 
-## 📝 Contexto Adicional
+## 📝 Additional Context
 
-Agrega cualquier otro contexto o capturas de pantalla sobre la solicitud de característica aquí.
+Add any other context or screenshots about the feature request here.
 
-## 🎯 Casos de Uso
+## 🎯 Use Cases
 
-Describe los casos de uso específicos donde esta característica sería útil:
+Describe the specific use cases where this feature would be useful:
 
-1. **Caso de uso 1**: [Descripción]
-2. **Caso de uso 2**: [Descripción]
-3. **Caso de uso 3**: [Descripción]
+1. **Use case 1**: [Description]
+2. **Use case 2**: [Description]
+3. **Use case 3**: [Description]
 
-## 🔧 Implementación Sugerida (Opcional)
+## 🔧 Suggested Implementation (Optional)
 
-Si tienes ideas sobre cómo implementar esta característica, compártelas aquí. 
+If you have ideas on how to implement this feature, share them here. 
