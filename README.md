@@ -1,211 +1,211 @@
-# PDD - Prompt Driven Design Template para Cursor
+# PDD - Prompt Driven Design Template for Cursor
 
-Una plantilla integral para **PDD (Prompt Driven Design)** adaptada específicamente para Cursor, proporcionando un framework completo para desarrollo asistido por IA.
+A comprehensive template for **PDD (Prompt Driven Design)** specifically adapted for Cursor, providing a complete framework for AI-assisted development.
 
-> **PDD es 10x mejor que prompt engineering y 100x mejor que vibe coding.**
+> **PDD is 10x better than prompt engineering and 100x better than vibe coding.**
 
-## 🚀 Inicio Rápido
+## 🚀 Quick Start
 
-> **📖 Para una guía completa paso a paso, consulta [GUIA_USO.md](GUIA_USO.md)**
+> **📖 For a complete step-by-step guide, see [USAGE_GUIDE.md](USAGE_GUIDE.md)**
 
 ```bash
-# 1. Clona esta plantilla
-git clone https://github.com/coleam00/Context-Engineering-Intro.git
-cd Context-Engineering-Intro
+# 1. Clone this template
+git clone https://github.com/Flowtask-ai/pdd-cursor-template.git
+cd pdd-cursor-template
 
-# 2. Configura las reglas del proyecto
+# 2. Configure project rules
 edit GLOBAL_RULES.md
 
-# 3. Agrega ejemplos
-# Coloca ejemplos de código en examples/
+# 3. Add examples
+# Place code examples in examples/
 
-# 4. Crea tu solicitud de característica
+# 4. Create your feature request
 edit FEATURE_REQUEST.md
 
-# 5. Genera un PRP
-"Genera un PRP siguiendo las reglas del proyecto"
+# 5. Generate a PRP
+"Generate a PRP following the project rules"
 
-# 6. Ejecuta el PRP
-"Ejecuta el PRP en PRPs/tu-caracteristica.md"
+# 6. Execute the PRP
+"Execute the PRP in PRPs/your-feature.md"
 ```
 
-## 📚 ¿Qué es PDD (Prompt Driven Design)?
+## 📚 What is PDD (Prompt Driven Design)?
 
 ### Prompt Engineering vs PDD
 
 **Prompt Engineering:**
-- Se enfoca en frases específicas
-- Limitado a cómo formulas una tarea
-- Como darle a alguien una nota adhesiva
+- Focuses on specific phrases
+- Limited to how you formulate a task
+- Like giving someone a sticky note
 
 **PDD (Prompt Driven Design):**
-- Sistema completo para proporcionar contexto integral
-- Incluye documentación, ejemplos, reglas y validación
-- Como escribir un guión completo con todos los detalles
+- Complete system for providing comprehensive context
+- Includes documentation, examples, rules, and validation
+- Like writing a complete script with all details
 
-## 🏗️ Estructura de la Plantilla
+## 🏗️ Template Structure
 
 ```
 pdd-cursor-template/
-├── GLOBAL_RULES.md                    # Reglas globales del proyecto
-├── FEATURE_REQUEST.md                 # Plantilla para solicitudes
-├── FEATURE_REQUEST_EXAMPLE.md         # Ejemplo de solicitud
+├── GLOBAL_RULES.md                    # Global project rules
+├── FEATURE_REQUEST.md                 # Feature request template
+├── FEATURE_REQUEST_EXAMPLE.md         # Feature request example
 ├── .cursor/
 │   └── rules/
-│       ├── 00-project-global.mdc      # Reglas globales (ejecutable)
-│       ├── 01-feature-request.mdc     # Guía para solicitudes
-│       ├── 02-prp-generator.mdc       # Generación de PRPs
-│       ├── 03-prp-executor.mdc        # Ejecución de PRPs
+│       ├── 00-project-global.mdc      # Global rules (executable)
+│       ├── 01-feature-request.mdc     # Feature request guide
+│       ├── 02-prp-generator.mdc       # PRP generation
+│       ├── 03-prp-executor.mdc        # PRP execution
 │       ├── roles/
-│       │   ├── 01-architect.mdc       # Rol de arquitecto
-│       │   └── 02-developer.mdc       # Rol de desarrollador
+│       │   ├── 01-architect.mdc       # Architect role
+│       │   └── 02-developer.mdc       # Developer role
 │       └── templates/
-│           └── prp-base.mdc           # Plantilla base para PRPs
+│           └── prp-base.mdc           # Base PRP template
 ├── prompts/
-│   ├── generate-prp.md                # Prompt para generar PRPs
-│   └── execute-prp.md                 # Prompt para ejecutar PRPs
-├── examples/                          # Ejemplos de código
-├── PRPs/                             # PRPs generados
-└── README.md                         # Este archivo
+│   ├── generate-prp.md                # Prompt to generate PRPs
+│   └── execute-prp.md                 # Prompt to execute PRPs
+├── examples/                          # Code examples
+├── PRPs/                             # Generated PRPs
+└── README.md                         # This file
 ```
 
-## 🎯 Flujo de Trabajo
+## 🎯 Workflow
 
-### 1. Configurar Reglas Globales
-Edita `GLOBAL_RULES.md` para definir las reglas de tu proyecto.
+### 1. Configure Global Rules
+Edit `GLOBAL_RULES.md` to define your project rules.
 
-### 2. Crear Solicitud de Característica
-Usa `FEATURE_REQUEST.md` para describir lo que quieres construir:
+### 2. Create Feature Request
+Use `FEATURE_REQUEST.md` to describe what you want to build:
 
 ```markdown
-## 🎯 CARACTERÍSTICA
-[Describe la característica específicamente]
+## 🎯 FEATURE
+[Describe the feature specifically]
 
-## 📚 EJEMPLOS
-[Referencia ejemplos en examples/]
+## 📚 EXAMPLES
+[Reference examples in examples/]
 
-## 📖 DOCUMENTACIÓN
-[Incluye URLs de documentación]
+## 📖 DOCUMENTATION
+[Include documentation URLs]
 
-## ⚠️ OTRAS CONSIDERACIONES
-[Requisitos técnicos, seguridad, etc.]
+## ⚠️ OTHER CONSIDERATIONS
+[Technical requirements, security, etc.]
 ```
 
-### 3. Generar PRP
-Usa el prompt:
+### 3. Generate PRP
+Use the prompt:
 ```
-"Genera un PRP siguiendo las reglas del proyecto, tomando como referencia FEATURE_REQUEST.md y los ejemplos en examples/"
-```
-
-### 4. Ejecutar Implementación
-Usa el prompt:
-```
-"Ejecuta el PRP en PRPs/tu-caracteristica.md siguiendo todas las validaciones"
+"Generate a PRP following the project rules, taking as reference FEATURE_REQUEST.md and examples in examples/"
 ```
 
-## 🎭 Sistema de Roles
+### 4. Execute Implementation
+Use the prompt:
+```
+"Execute the PRP in PRPs/your-feature.md following all validations"
+```
 
-### 🏗️ Arquitecto
-- Diseña arquitecturas robustas
-- Toma decisiones técnicas de alto nivel
-- Crea documentación de arquitectura
+## 🎭 Role System
 
-### 💻 Desarrollador
-- Implementa funcionalidades
-- Escribe código limpio
-- Crea tests unitarios
+### 🏗️ Architect
+- Designs robust architectures
+- Makes high-level technical decisions
+- Creates architecture documentation
 
-## 🔧 Mejores Prácticas
+### 💻 Developer
+- Implements features
+- Writes clean code
+- Creates unit tests
 
-### 1. Sé Específico
-- No asumas que la IA conoce tus preferencias
-- Incluye requisitos específicos y restricciones
-- Referencia ejemplos liberalmente
+## 🔧 Best Practices
 
-### 2. Proporciona Ejemplos
-- Más ejemplos = mejores implementaciones
-- Muestra qué hacer y qué no hacer
-- Incluye patrones de manejo de errores
+### 1. Be Specific
+- Don't assume the AI knows your preferences
+- Include specific requirements and constraints
+- Reference examples liberally
 
-### 3. Usa Validaciones
-- Los PRPs incluyen comandos de test que deben pasar
-- La IA iterará hasta que todas las validaciones tengan éxito
-- Esto asegura código funcional en el primer intento
+### 2. Provide Examples
+- More examples = better implementations
+- Show what to do and what not to do
+- Include error handling patterns
 
-### 4. Aprovecha la Documentación
-- Incluye documentación oficial de APIs
-- Agrega recursos relevantes
-- Referencia secciones específicas
+### 3. Use Validations
+- PRPs include test commands that must pass
+- AI will iterate until all validations succeed
+- This ensures functional code on first attempt
 
-### 5. Personaliza Reglas
-- Agrega tus convenciones
-- Incluye reglas específicas del proyecto
-- Define estándares de coding
+### 4. Leverage Documentation
+- Include official API documentation
+- Add relevant resources
+- Reference specific sections
 
-## 📊 Beneficios
+### 5. Customize Rules
+- Add your conventions
+- Include project-specific rules
+- Define coding standards
 
-1. **Reduce Fallos de IA**: La mayoría de fallos no son del modelo, sino de contexto
-2. **Asegura Consistencia**: La IA sigue patrones y convenciones del proyecto
-3. **Permite Características Complejas**: Maneja implementaciones multi-paso
-4. **Auto-corrección**: Bucles de validación permiten corrección automática
+## 📊 Benefits
 
-## 🚀 Casos de Uso
+1. **Reduces AI Failures**: Most failures are not from the model, but from context
+2. **Ensures Consistency**: AI follows project patterns and conventions
+3. **Enables Complex Features**: Handles multi-step implementations
+4. **Self-Correction**: Validation loops allow automatic correction
 
-### Proyecto Nuevo
-1. Configuración inicial
-2. Definir característica inicial
-3. Generar PRP completo
-4. Ejecutar implementación
+## 🚀 Use Cases
 
-### Proyecto Existente
-1. Análisis automático del código
-2. Generar plan de refactorización
-3. Ejecutar mejoras incrementales
-4. Validación automática
+### New Project
+1. Initial setup
+2. Define initial feature
+3. Generate complete PRP
+4. Execute implementation
 
-### Extensión de Funcionalidad
-1. Definir nueva característica
-2. Generar PRP especializado
-3. Implementación con validación automática
+### Existing Project
+1. Automatic code analysis
+2. Generate refactoring plan
+3. Execute incremental improvements
+4. Automatic validation
 
-## 📚 Recursos
+### Feature Extension
+1. Define new feature
+2. Generate specialized PRP
+3. Implementation with automatic validation
 
-- [Documentación de Cursor](https://docs.cursor.com/)
+## 📚 Resources
+
+- [Cursor Documentation](https://docs.cursor.com/)
 - [PDD Best Practices](https://www.philschmid.de/context-engineering)
 - [Cursor Rules Documentation](https://docs.cursor.com/context/rules)
 
 ## 🚀 Flowtask-ai
 
-Este proyecto es parte de [Flowtask-ai](https://github.com/Flowtask-ai), una organización dedicada a crear herramientas y metodologías para mejorar la productividad del desarrollo con IA.
+This project is part of [Flowtask-ai](https://github.com/Flowtask-ai), an organization dedicated to creating tools and methodologies to improve AI-assisted development productivity.
 
-### 🌟 Características de Flowtask-ai
+### 🌟 Flowtask-ai Features
 
-- **Metodologías probadas**: PDD y otras técnicas de desarrollo con IA
-- **Templates optimizados**: Plantillas listas para usar
-- **Comunidad activa**: Soporte y colaboración continua
-- **Innovación constante**: Nuevas herramientas y mejoras
+- **Proven Methodologies**: PDD and other AI development techniques
+- **Optimized Templates**: Ready-to-use templates
+- **Active Community**: Continuous support and collaboration
+- **Constant Innovation**: New tools and improvements
 
-## 🤝 Contribuir
+## 🤝 Contributing
 
-1. Fork el repositorio
-2. Crea una rama para tu característica (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### 📋 Guías de Contribución
+### 📋 Contribution Guidelines
 
-- **Sigue PDD**: Usa esta misma metodología para contribuir
-- **Documenta cambios**: Actualiza README.md y GUIA_USO.md
-- **Mantén calidad**: Asegúrate de que los tests pasen
-- **Sé específico**: Describe claramente tus cambios
+- **Follow PDD**: Use this same methodology to contribute
+- **Document Changes**: Update README.md and USAGE_GUIDE.md
+- **Maintain Quality**: Ensure tests pass
+- **Be Specific**: Clearly describe your changes
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Contacto
+## 📞 Contact
 
 - **GitHub**: [Flowtask-ai](https://github.com/Flowtask-ai)
-- **Issues**: [Reportar problemas](https://github.com/Flowtask-ai/pdd-cursor-template/issues)
-- **Discussions**: [Discusiones](https://github.com/Flowtask-ai/pdd-cursor-template/discussions)
+- **Issues**: [Report issues](https://github.com/Flowtask-ai/pdd-cursor-template/issues)
+- **Discussions**: [Discussions](https://github.com/Flowtask-ai/pdd-cursor-template/discussions)

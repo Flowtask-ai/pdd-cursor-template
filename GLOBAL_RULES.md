@@ -1,115 +1,120 @@
-# Reglas Globales del Proyecto - PDD
+# Global Project Rules - PDD
 
-Reglas que rigen el desarrollo en este proyecto usando PDD (Prompt Driven Design). Se aplican automáticamente a través del sistema de Cursor Rules.
+Rules that govern development in this project using PDD (Prompt Driven Design). They are automatically applied through the Cursor Rules system.
 
-## 🔄 Conciencia del Proyecto
+## 🔄 Project Awareness
 
-- **Lee `README.md`** al inicio de cada conversación
-- **Analiza patrones existentes** antes de implementar
-- **Mantén consistencia** con el estilo del proyecto
+- **Read `README.md`** at the beginning of each conversation
+- **Analyze existing patterns** before implementing
+- **Maintain consistency** with project style
 
-## 🧱 Estructura de Código
+## 🧱 Code Structure
 
-- **Máximo 500 líneas por archivo** - refactoriza si es necesario
-- **Organiza en módulos** por característica o responsabilidad
-- **Usa imports relativos** dentro de paquetes
-- **Usa `python-dotenv`** para variables de entorno
+- **Maximum 500 lines per file** - refactor if necessary
+- **Organize in modules** by feature or responsibility
+- **Use relative imports** within packages
+- **Use `python-dotenv`** for environment variables
 
-### Patrones de Arquitectura
+### Architecture Patterns
 
-**Para agentes de IA:**
+**For AI agents:**
 ```
 agents/
 ├── __init__.py
-├── agent.py          # Lógica principal
-├── tools.py          # Herramientas
-├── prompts.py        # Prompts del sistema
-└── models.py         # Modelos de datos
+├── agent.py          # Main logic
+├── tools.py          # Tools
+├── prompts.py        # System prompts
+└── models.py         # Data models
 ```
 
-**Para APIs:**
+**For APIs:**
 ```
 api/
 ├── __init__.py
 ├── routes/           # Endpoints
-├── models/           # Modelos
-├── services/         # Lógica de negocio
+├── models/           # Models
+├── services/         # Business logic
 └── middleware/       # Middleware
 ```
 
-## 🧪 Testing y Calidad
+## 🧪 Testing and Quality
 
-- **Crea tests unitarios** para cada característica
-- **Mantén cobertura >90%**
-- **Ejecuta validaciones automáticas** después de cambios
-- **Corrige errores automáticamente** cuando sea posible
+- **Create unit tests** for each feature
+- **Maintain coverage >90%**
+- **Run automatic validations** after changes
+- **Fix errors automatically** when possible
 
-### Validaciones Automáticas
+### Automatic Validations
 ```bash
-# Sintaxis y estilo
+# Syntax and style
 ruff check --fix && mypy .
 
-# Tests unitarios
+# Unit tests
 pytest tests/ -v
 
-# Cobertura
+# Coverage
 pytest --cov=src --cov-report=html
 ```
 
-## 📎 Estilo y Convenciones
+## 📎 Style and Conventions
 
-- **Python** como lenguaje principal
-- **Sigue PEP8** con type hints
-- **Usa `pydantic`** para validación
-- **FastAPI** para APIs, **SQLAlchemy** para ORM
+- **Python** as primary language
+- **Follow PEP8** with type hints
+- **Use `pydantic`** for validation
+- **FastAPI** for APIs, **SQLAlchemy** for ORM
 
-### Documentación de Código
+### Code Documentation
 ```python
 def example_function(param1: str, param2: int) -> bool:
     """
-    Breve resumen.
+    Brief summary.
 
     Args:
-        param1 (str): Descripción.
-        param2 (int): Descripción.
+        param1 (str): Description.
+        param2 (int): Description.
 
     Returns:
-        bool: Descripción.
+        bool: Description.
     """
 ```
 
-## 🧠 Reglas de IA
+## 🧠 AI Rules
 
-- **Nunca asumas contexto faltante** - pregunta si no estás seguro
-- **Nunca alucines librerías** - solo usa paquetes verificados
-- **Confirma rutas de archivos** antes de referenciarlos
-- **No elimines código existente** sin instrucción explícita
+- **Never assume missing context** - ask if you're not sure
+- **Never hallucinate libraries** - only use verified packages
+- **Confirm file paths** before referencing them
+- **Don't delete existing code** without explicit instruction
 
-## 🔧 Configuración
+## 🔧 Configuration
 
-- **Usa `.env`** para variables locales
-- **Nunca commits `.env`** con información sensible
-- **Mantén `requirements.txt`** actualizado
-- **Documenta dependencias** requeridas
+- **Use `.env`** for local variables
+- **Never commit `.env`** with sensitive information
+- **Keep `requirements.txt`** updated
+- **Document required dependencies**
 
-## 📚 Documentación
+## 📚 Documentation
 
-- **Actualiza `README.md`** con nuevas características
-- **Mantén docstrings** actualizados
-- **Documenta patrones** en `examples/`
-- **Usa versionado semántico** para releases
+- **Update `README.md`** with new features
+- **Keep docstrings** updated
+- **Document patterns** in `examples/`
+- **Use semantic versioning** for releases
 
-## 🎯 Metodología Context Engineering
+## 🎯 PDD (Prompt Driven Design) Methodology
 
-### Flujo de Trabajo
-1. **Definir Requisitos**: Usar `FEATURE_REQUEST.md`
-2. **Generar PRP**: Crear Product Requirements Prompt
-3. **Ejecutar**: Seguir PRP con validaciones
-4. **Refinamiento**: Iterar basado en feedback
+### Workflow
+1. **Define feature** in `FEATURE_REQUEST.md`
+2. **Generate PRP** using project rules
+3. **Execute implementation** with validations
+4. **Validate and iterate** until success
 
-### Criterios de Éxito
-- Todos los tests pasan
-- Código cumple estándares de estilo
-- Documentación actualizada
-- Funcionalidad cumple requisitos
-- No hay regresiones 
+### Key Principles
+- **Context over prompts**: Provide comprehensive context
+- **Examples over explanations**: Show, don't just tell
+- **Validation over assumptions**: Test everything
+- **Iteration over perfection**: Improve continuously
+
+### Success Metrics
+- **All tests pass** automatically
+- **Code follows patterns** from examples
+- **Documentation is updated** and accurate
+- **No regressions** in existing functionality 

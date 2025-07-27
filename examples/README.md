@@ -1,51 +1,104 @@
-# Ejemplos de Código
+# Code Examples
 
-Esta carpeta contiene ejemplos de código que sirven como patrones y referencias para el desarrollo.
+This folder contains code examples that serve as patterns and references for development.
 
-## 📁 Estructura Recomendada
+## 📁 Recommended Structure
 
 ```
 examples/
-├── README.md                    # Este archivo
-├── api/                         # Patrones para APIs
-│   ├── fastapi_basic/          # API básica con FastAPI
-│   └── authentication/         # Patrones de autenticación
-├── database/                    # Patrones de base de datos
-│   ├── sqlalchemy_models/      # Modelos con SQLAlchemy
-│   └── migrations/             # Patrones de migración
-├── testing/                     # Patrones de testing
-│   ├── unit_tests/             # Tests unitarios
-│   └── integration_tests/      # Tests de integración
-└── utils/                       # Utilidades comunes
-    ├── logging/                # Configuración de logging
-    └── config/                 # Manejo de configuración
+├── README.md                    # This file
+├── api/                         # API patterns
+│   ├── fastapi_basic/          # Basic API with FastAPI
+│   └── authentication/         # Authentication patterns
+├── database/                    # Database patterns
+│   ├── sqlalchemy_models/      # Models with SQLAlchemy
+│   └── migrations/             # Migration patterns
+├── testing/                     # Testing patterns
+│   ├── unit_tests/             # Unit tests
+│   └── integration_tests/      # Integration tests
+└── utils/                       # Common utilities
+    ├── logging/                # Logging configuration
+    └── config/                 # Configuration management
 ```
 
-## 🎯 Cómo Usar los Ejemplos
+## 🎯 How to Use Examples
 
-1. **Referencia en FEATURE_REQUEST.md**: Menciona ejemplos relevantes
-2. **Sigue patrones**: Usa como inspiración, no copies directamente
-3. **Adapta al proyecto**: Ajusta según las convenciones del proyecto
-4. **Mantén actualizados**: Actualiza ejemplos cuando cambien patrones
+### 1. Reference in Feature Requests
+When creating a `FEATURE_REQUEST.md`, reference relevant examples:
 
-## 📝 Tipos de Ejemplos Útiles
+```markdown
+## 📚 EXAMPLES
 
-### Patrones de Arquitectura
-- Estructura de directorios
-- Organización de módulos
-- Patrones de importación
+- `examples/api/fastapi_basic/` - Basic FastAPI structure
+- `examples/database/sqlalchemy_models/` - Database model patterns
+- `examples/testing/unit_tests/` - Unit testing patterns
+```
 
-### Patrones de Código
-- Manejo de errores
-- Validación de datos
-- Logging y debugging
+### 2. Follow Established Patterns
+Use examples as templates for new implementations:
 
-### Patrones de Testing
-- Tests unitarios
-- Tests de integración
-- Mocks y fixtures
+- **Copy structure** from similar examples
+- **Adapt patterns** to your specific needs
+- **Maintain consistency** with existing code
 
-### Patrones de Configuración
-- Variables de entorno
-- Configuración de desarrollo/producción
-- Manejo de secretos 
+### 3. Update Examples
+Keep examples current with your project:
+
+- **Add new patterns** that work well
+- **Update existing examples** when patterns evolve
+- **Remove outdated examples** that are no longer relevant
+
+## 📝 Example Guidelines
+
+### Structure
+- **One pattern per folder** for clarity
+- **Include README.md** in each example folder
+- **Provide complete working code** when possible
+
+### Documentation
+- **Explain the pattern** and when to use it
+- **Include usage examples** and code snippets
+- **Reference related documentation** and resources
+
+### Quality
+- **Follow project conventions** and style guides
+- **Include tests** for complex examples
+- **Keep examples simple** and focused
+
+## 🔄 Maintenance
+
+### Regular Updates
+- **Review examples** quarterly
+- **Update with new patterns** as they emerge
+- **Remove obsolete examples** to reduce confusion
+
+### Validation
+- **Test examples** to ensure they work
+- **Verify compatibility** with current dependencies
+- **Check for security** best practices
+
+## 📚 Example Categories
+
+### API Development
+- REST API patterns
+- Authentication and authorization
+- Error handling and validation
+- API documentation
+
+### Database Operations
+- Model definitions
+- Query patterns
+- Migration strategies
+- Connection management
+
+### Testing Strategies
+- Unit test patterns
+- Integration test setup
+- Mock and fixture examples
+- Test data management
+
+### Utility Functions
+- Common helper functions
+- Configuration management
+- Logging and monitoring
+- Error handling utilities 

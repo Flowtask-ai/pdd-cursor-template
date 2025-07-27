@@ -1,95 +1,95 @@
-# Prompt para Generar PRP
+# Prompt to Generate PRP
 
-## 🎯 Instrucciones
+## 🎯 Instructions
 
-Actúa como un experto en PDD (Prompt Driven Design). Genera un PRP (Product Requirements Prompt) completo siguiendo estas instrucciones:
+Act as an expert in PDD (Prompt Driven Design). Generate a complete PRP (Product Requirements Prompt) following these instructions:
 
-## 📋 Proceso
+## 📋 Process
 
-### 1. Análisis
-- **Lee completamente** `FEATURE_REQUEST.md`
-- **Identifica todos los requisitos** técnicos y funcionales
-- **Analiza los ejemplos** referenciados
-- **Revisa la documentación** proporcionada
+### 1. Analysis
+- **Read completely** `FEATURE_REQUEST.md`
+- **Identify all technical and functional requirements**
+- **Analyze referenced examples**
+- **Review provided documentation**
 
-### 2. Investigación
-- **Busca patrones similares** en el código existente
-- **Consulta documentación** oficial de librerías
-- **Identifica mejores prácticas** y gotchas conocidas
+### 2. Research
+- **Search for similar patterns** in existing code
+- **Consult official documentation** of libraries
+- **Identify best practices** and known gotchas
 
-### 3. Creación
-- **Usa la plantilla** en `.cursor/rules/templates/prp-base.mdc`
-- **Incluye contexto completo** y documentación
-- **Define pasos de implementación** detallados
-- **Especifica validaciones** ejecutables
+### 3. Creation
+- **Use the template** in `.cursor/rules/templates/prp-base.mdc`
+- **Include complete context** and documentation
+- **Define detailed implementation steps**
+- **Specify executable validations**
 
-## 📝 Estructura Requerida
+## 📝 Required Structure
 
-1. **Propósito y Contexto**
-   - Descripción clara del objetivo
-   - Contexto del proyecto y arquitectura
+1. **Purpose and Context**
+   - Clear description of objective
+   - Project context and architecture
 
-2. **Requisitos Técnicos**
-   - Especificaciones detalladas
-   - Dependencias y librerías
+2. **Technical Requirements**
+   - Detailed specifications
+   - Dependencies and libraries
 
-3. **Arquitectura y Diseño**
-   - Estructura de archivos propuesta
-   - Patrones de diseño a seguir
+3. **Architecture and Design**
+   - Proposed file structure
+   - Design patterns to follow
 
-4. **Plan de Implementación**
-   - Pasos detallados y secuenciales
-   - Validaciones en cada paso
+4. **Implementation Plan**
+   - Detailed and sequential steps
+   - Validations at each step
 
-5. **Testing y Validación**
-   - Estrategia de testing
-   - Criterios de aceptación
+5. **Testing and Validation**
+   - Testing strategy
+   - Acceptance criteria
 
-6. **Criterios de Éxito**
-   - Métricas específicas
-   - Funcionalidad requerida
+6. **Success Criteria**
+   - Specific metrics
+   - Required functionality
 
-## 🔍 Validaciones
+## 🔍 Validations
 
-### Automáticas
+### Automatic
 ```bash
-# Sintaxis y estilo
+# Syntax and style
 ruff check --fix && mypy .
 
-# Tests unitarios
+# Unit tests
 pytest tests/ -v
 
-# Cobertura
+# Coverage
 pytest --cov=src --cov-report=html
 ```
 
-### Manuales
-- [ ] Funcionalidad cumple requisitos
-- [ ] Código sigue patrones del proyecto
-- [ ] Documentación actualizada
+### Manual
+- [ ] Functionality meets requirements
+- [ ] Code follows project patterns
+- [ ] Documentation updated
 
-## 📊 Calidad
+## 📊 Quality
 
 ### Checklist
-- [ ] **Contexto completo**: Toda la información necesaria
-- [ ] **Pasos claros**: Implementación paso a paso
-- [ ] **Validaciones ejecutables**: Comandos que se pueden ejecutar
-- [ ] **Referencias correctas**: Archivos y patrones existentes
-- [ ] **Criterios medibles**: Éxito definido claramente
+- [ ] **Complete context**: All necessary information
+- [ ] **Clear steps**: Step-by-step implementation
+- [ ] **Executable validations**: Commands that can be executed
+- [ ] **Correct references**: Existing files and patterns
+- [ ] **Measurable criteria**: Success clearly defined
 
-### Puntuación
-**Evalúa el PRP en una escala de 1-10** basado en:
-- Completitud del contexto (1-3 puntos)
-- Claridad de implementación (1-3 puntos)
-- Calidad de validaciones (1-2 puntos)
-- Referencias y documentación (1-2 puntos)
+### Scoring
+**Evaluate the PRP on a scale of 1-10** based on:
+- Context completeness (1-3 points)
+- Implementation clarity (1-3 points)
+- Validation quality (1-2 points)
+- References and documentation (1-2 points)
 
-## 📤 Salida
+## 📤 Output
 
-### Archivo a Crear
-Guarda el PRP en `PRPs/[nombre-caracteristica].md`
+### File to Create
+Save the PRP in `PRPs/[feature-name].md`
 
-### Contenido
-- **PRP completo** siguiendo la plantilla
-- **Puntuación de confianza** (1-10)
-- **Justificación** de la puntuación 
+### Content
+- **Complete PRP** following the template
+- **Confidence score** (1-10)
+- **Score justification** 

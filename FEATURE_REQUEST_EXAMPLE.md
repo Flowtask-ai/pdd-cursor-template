@@ -1,86 +1,63 @@
-# Ejemplo: Sistema de Notificaciones - PDD
+# Example: Notification System - PDD
 
-## 🎯 CARACTERÍSTICA
+## 🎯 FEATURE
 
-Crear un sistema de notificaciones que permita enviar notificaciones por email y Slack con templates personalizables, rate limiting, y retry automático. El sistema debe integrarse con PostgreSQL para persistir el estado.
+Create a notification system that allows sending notifications via email and Slack with customizable templates, rate limiting, and automatic retry. The system must integrate with PostgreSQL to persist state.
 
-### Funcionalidades específicas:
-- Envío de notificaciones por email usando SMTP
-- Integración con Slack API para mensajes
-- Sistema de templates con variables dinámicas
-- Rate limiting por destinatario
-- Retry automático con backoff exponencial
-- API REST para envío programático
+### Specific functionalities:
+- Send email notifications using SMTP
+- Integration with Slack API for messages
+- Template system with dynamic variables
+- Rate limiting per recipient
+- Automatic retry with exponential backoff
+- REST API for programmatic sending
+- Webhook support for external integrations
+- Notification history and analytics
 
-## 📚 EJEMPLOS
+## 📚 EXAMPLES
 
-### Ejemplos de referencia:
-- `examples/notification_service/` - Patrón para servicios de notificación
-- `examples/api_endpoints/` - Patrón para endpoints REST
-- `examples/database_models/` - Patrón para modelos con SQLAlchemy
+- `examples/api/fastapi_basic/` - Basic FastAPI structure for API endpoints
+- `examples/database/sqlalchemy_models/` - Database models for storing notifications
+- `examples/testing/unit_tests/` - Testing patterns for notification logic
+- `examples/utils/email_templates/` - Email template patterns
+- `examples/utils/rate_limiting/` - Rate limiting implementation patterns
 
-### Cómo usar los ejemplos:
-- **Sigue la estructura** del servicio de notificaciones existente
-- **Adapta los patrones** de validación de API endpoints
-- **Reutiliza la configuración** de base de datos
+## 📖 DOCUMENTATION
 
-## 📖 DOCUMENTACIÓN
+- **FastAPI**: https://fastapi.tiangolo.com/ - Web framework for API
+- **SQLAlchemy**: https://docs.sqlalchemy.org/ - Database ORM
+- **Slack API**: https://api.slack.com/ - Slack integration
+- **SMTP**: https://docs.python.org/3/library/smtplib.html - Email sending
+- **Pydantic**: https://docs.pydantic.dev/ - Data validation
+- **Celery**: https://docs.celeryproject.org/ - Background task processing
 
-### Documentación técnica:
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [SQLAlchemy Documentation](https://docs.sqlalchemy.org/)
-- [Slack API Documentation](https://api.slack.com/)
+## ⚠️ OTHER CONSIDERATIONS
 
-## ⚠️ OTRAS CONSIDERACIONES
+### Technical requirements:
+- **Performance**: Handle 1000+ notifications per minute
+- **Reliability**: 99.9% uptime with automatic failover
+- **Security**: Encrypt sensitive data, validate all inputs
+- **Scalability**: Design for horizontal scaling
+- **Monitoring**: Comprehensive logging and metrics
 
-### Requisitos técnicos:
-- **Rate limiting**: Máximo 100 notificaciones por minuto por destinatario
-- **Retry automático**: 3 intentos con backoff exponencial
-- **Templates**: Soporte para variables {{variable}}
+### Security considerations:
+- **API Authentication**: JWT tokens for API access
+- **Rate Limiting**: Prevent abuse and spam
+- **Data Encryption**: Encrypt sensitive notification content
+- **Input Validation**: Sanitize all user inputs
+- **Audit Trail**: Log all notification activities
 
-### Consideraciones de seguridad:
-- **Autenticación**: API key requerida para envío programático
-- **Validación**: Sanitización de templates para prevenir inyección
-- **Logs**: No registrar información sensible
+### Integration requirements:
+- **Database**: PostgreSQL for persistence
+- **Message Queue**: Redis for background processing
+- **Monitoring**: Prometheus metrics and Grafana dashboards
+- **Logging**: Structured logging with correlation IDs
 
-## 🎯 CRITERIOS DE ÉXITO
-
-### Funcionalidad:
-- [ ] Envío exitoso de emails a través de SMTP
-- [ ] Integración funcional con Slack API
-- [ ] Sistema de templates con variables dinámicas
-- [ ] Rate limiting implementado y funcionando
-- [ ] API REST funcional con autenticación
-
-### Calidad:
-- [ ] Todos los tests pasan (cobertura >90%)
-- [ ] Código cumple estándares de estilo
-- [ ] Documentación de API generada automáticamente
-
-## 🔧 CONFIGURACIÓN REQUERIDA
-
-### Variables de entorno:
-```
-# Base de datos
-DATABASE_URL=postgresql://user:pass@localhost/notifications
-
-# SMTP para emails
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your_email@gmail.com
-SMTP_PASSWORD=your_app_password
-
-# Slack
-SLACK_BOT_TOKEN=xoxb-your-bot-token
-
-# API
-API_SECRET_KEY=your-secret-key-here
-```
-
-### Dependencias adicionales:
-```
-fastapi>=0.104.0
-sqlalchemy>=2.0.0
-slack-sdk>=3.21.0
-aiosmtplib>=2.0.0
-``` 
+### Success criteria:
+- [ ] Send notifications via email and Slack successfully
+- [ ] Handle rate limiting and retries automatically
+- [ ] Provide REST API for external integrations
+- [ ] Store notification history in PostgreSQL
+- [ ] Achieve 99.9% delivery success rate
+- [ ] Complete test coverage >90%
+- [ ] API response time <200ms 

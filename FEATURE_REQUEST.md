@@ -1,67 +1,44 @@
-# Solicitud de Característica
+# Feature Request
 
-Utiliza esta plantilla para describir una nueva característica que quieres implementar.
+Use this template to describe a new feature you want to implement.
 
-## 🎯 CARACTERÍSTICA
+## 🎯 FEATURE
 
-[Describe aquí la característica que quieres implementar. Sé específico sobre funcionalidad, requisitos técnicos y comportamiento esperado]
+[Describe here the feature you want to implement. Be specific about functionality, technical requirements, and expected behavior]
 
-**Ejemplos:**
-- ❌ "Crear un scraper web"
-- ✅ "Crear un scraper web asíncrono usando BeautifulSoup que extraiga datos de productos de sitios e-commerce, maneje rate limiting, y almacene resultados en PostgreSQL"
+**Examples:**
+- ❌ "Create a web scraper"
+- ✅ "Create an asynchronous web scraper using BeautifulSoup that extracts product data from e-commerce sites, handles rate limiting, and stores results in PostgreSQL"
 
-## 📚 EJEMPLOS
+## 📚 EXAMPLES
 
-[Proporciona ejemplos que tienes en la carpeta `examples/` y cómo deben ser utilizados]
+[Provide examples you have in the `examples/` folder and how they should be used]
 
-**Ejemplos de referencia:**
-- `examples/web_scraper/` - Patrón para scrapers web
-- `examples/api_client/` - Patrón para clientes de API
-- `examples/database_models/` - Patrón para modelos de base de datos
+**Reference examples:**
+- `examples/web_scraper/` - Pattern for web scrapers
+- `examples/api_client/` - Pattern for API clients
+- `examples/database_models/` - Pattern for database models
 
-## 📖 DOCUMENTACIÓN
+## 📖 DOCUMENTATION
 
-[Lista documentación relevante (URLs de APIs, librerías, etc.)]
+[Include URLs to relevant documentation, APIs, or resources]
 
-**Documentación técnica:**
-- [URL de documentación de API]
-- [URL de guías de librerías]
-- [URL de mejores prácticas]
+**Required documentation:**
+- [Library/Framework Documentation](https://example.com/docs)
+- [API Reference](https://example.com/api)
+- [Best Practices Guide](https://example.com/best-practices)
 
-## ⚠️ OTRAS CONSIDERACIONES
+## ⚠️ OTHER CONSIDERATIONS
 
-[Cualquier otra consideración o requisito específico]
+[Include technical requirements, security considerations, performance requirements, or any other important details]
 
-**Requisitos técnicos:**
-- [Autenticación requerida]
-- [Rate limits o cuotas]
-- [Requisitos de rendimiento]
+**Technical requirements:**
+- Performance: Must handle X requests per second
+- Security: Implement authentication and authorization
+- Scalability: Design for future growth
+- Compatibility: Support Python 3.8+
 
-**Consideraciones de seguridad:**
-- [Manejo de datos sensibles]
-- [Validación de entrada]
-
-## 🎯 CRITERIOS DE ÉXITO
-
-**Funcionalidad:**
-- [ ] [Criterio específico 1]
-- [ ] [Criterio específico 2]
-
-**Calidad:**
-- [ ] Todos los tests pasan
-- [ ] Código cumple estándares de estilo
-- [ ] Documentación actualizada
-
-## 🔧 CONFIGURACIÓN REQUERIDA
-
-**Variables de entorno:**
-```
-API_KEY=your_api_key_here
-DATABASE_URL=your_database_url
-```
-
-**Dependencias adicionales:**
-```
-requests>=2.31.0
-beautifulsoup4>=4.12.0
-``` 
+**Constraints:**
+- Time budget: 2 weeks
+- Team size: 1 developer
+- Existing dependencies: Must work with current stack 
