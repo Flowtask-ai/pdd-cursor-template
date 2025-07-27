@@ -43,6 +43,35 @@ edit FEATURE_REQUEST.md
 - Includes documentation, examples, rules, and validation
 - Like writing a complete script with all details
 
+## 🎯 Evolution and Inspiration
+
+### Original Context Engineering
+This template is inspired by the **Context Engineering** methodology originally developed for Claude Code. The original creators pioneered the concept of providing comprehensive context to AI assistants through structured documentation, examples, and validation systems.
+
+### Adaptation for Cursor
+We've adapted and evolved this methodology specifically for **Cursor**, leveraging its unique features:
+
+- **Cursor Rules**: Automatic context provision through `.cursor/rules/` system
+- **Hybrid Approach**: Combining automatic rules with manual prompts for maximum effectiveness
+- **Enhanced Workflow**: Streamlined process optimized for Cursor's AI capabilities
+
+### Innovation: Role-Based Development
+Building on Cursor's recent **Subagents** feature, we've introduced a **role-based development system** that enables:
+
+- **Specialized AI Roles**: Architect, Developer, Tester, Reviewer, Documenter
+- **Parallel Conversations**: Work with multiple specialized AI agents simultaneously
+- **Extended Context Windows**: Each role maintains focused context for better results
+- **Collaborative Workflow**: Agents can pass information through standardized files
+
+This approach not only provides specialization but also leverages Cursor's ability to work with multiple conversations, effectively expanding the context window and improving AI performance.
+
+### Key Improvements Over Original
+- **Cursor-Native**: Designed specifically for Cursor's ecosystem
+- **Role System**: Multi-agent collaboration inspired by Subagents
+- **Enhanced Automation**: Better integration with Cursor Rules
+- **International**: Fully documented in English for global adoption
+- **Simplified**: Streamlined for easier adoption and use
+
 ## 🏗️ Template Structure
 
 ```
@@ -105,15 +134,44 @@ Use the prompt:
 
 ## 🎭 Role System
 
+Our **role-based development system** is inspired by Cursor's Subagents feature, enabling specialized AI collaboration:
+
 ### 🏗️ Architect
 - Designs robust architectures
 - Makes high-level technical decisions
 - Creates architecture documentation
+- **Context**: Focuses on system design and technical strategy
 
 ### 💻 Developer
 - Implements features
 - Writes clean code
 - Creates unit tests
+- **Context**: Focuses on implementation and code quality
+
+### 🔍 Tester
+- Creates comprehensive test suites
+- Validates functionality
+- Ensures code quality
+- **Context**: Focuses on testing and validation
+
+### 📝 Reviewer
+- Reviews code and architecture
+- Suggests improvements
+- Ensures best practices
+- **Context**: Focuses on code review and optimization
+
+### 📚 Documenter
+- Creates and maintains documentation
+- Writes user guides
+- Updates technical specs
+- **Context**: Focuses on documentation and knowledge sharing
+
+### 🚀 Benefits of Role-Based Development
+- **Specialized Expertise**: Each role has focused knowledge and context
+- **Parallel Processing**: Work with multiple specialized agents simultaneously
+- **Extended Context**: Each conversation maintains relevant context
+- **Collaborative Workflow**: Agents share information through standardized files
+- **Better Results**: Specialized focus leads to higher quality outputs
 
 ## 🔧 Best Practices
 
@@ -203,6 +261,17 @@ This project is part of [Flowtask-ai](https://github.com/Flowtask-ai), an organi
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+### Original Inspiration
+This template builds upon the groundbreaking **Context Engineering** methodology. We extend our gratitude to the original creators who pioneered this approach for AI-assisted development. Their work on providing comprehensive context to AI assistants has fundamentally changed how we think about AI collaboration.
+
+### Cursor Team
+Special thanks to the **Cursor team** for creating such a powerful development environment and for the recent **Subagents** feature that inspired our role-based development system. Their continuous innovation in AI-assisted development tools makes projects like this possible.
+
+### Community
+To the open-source community and all contributors who believe in the power of AI-assisted development. Your feedback, contributions, and adoption help us improve and evolve this methodology.
 
 ## 📞 Contact
 
