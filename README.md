@@ -31,22 +31,45 @@ edit FEATURE_REQUEST.md
 
 ## 📚 What is PDD (Prompt Driven Design)?
 
-### Prompt Engineering vs PDD
+### The Foundation: Context Engineering
+
+**Context Engineering** is the foundational methodology that PDD builds upon. It's a comprehensive approach to providing AI assistants with complete context through:
+
+- **Structured Documentation**: Complete project context and requirements
+- **Code Examples**: Working patterns and implementations
+- **Validation Systems**: Automated tests and quality checks
+- **Rule-Based Guidance**: Clear conventions and standards
+
+### Prompt Engineering vs Context Engineering vs PDD
 
 **Prompt Engineering:**
 - Focuses on specific phrases
 - Limited to how you formulate a task
 - Like giving someone a sticky note
 
-**PDD (Prompt Driven Design):**
+**Context Engineering:**
 - Complete system for providing comprehensive context
 - Includes documentation, examples, rules, and validation
 - Like writing a complete script with all details
+- **Original**: Developed for Claude Code
+
+**PDD (Prompt Driven Design):**
+- **Evolution** of Context Engineering specifically for Cursor
+- **Enhanced** with role-based development and Cursor Rules
+- **Optimized** for modern AI-assisted development workflows
+- **International** and accessible to global developers
+- Like having a complete development team with specialized roles
 
 ## 🎯 Evolution and Inspiration
 
 ### Original Context Engineering
 This template is inspired by the **Context Engineering** methodology originally developed for Claude Code. The original creators pioneered the concept of providing comprehensive context to AI assistants through structured documentation, examples, and validation systems.
+
+**Context Engineering** is the foundation upon which PDD is built. It established the core principles of:
+- Providing complete context to AI assistants
+- Using structured documentation and examples
+- Implementing validation systems
+- Creating rule-based development workflows
 
 **Original Repository**: [Context Engineering Intro](https://github.com/coleam00/Context-Engineering-Intro) by [@coleam00](https://github.com/coleam00)
 
@@ -67,12 +90,13 @@ Inspired by the **Subagents** concept from Claude Code, we've introduced a **rol
 
 This approach not only provides specialization but also leverages Cursor's ability to work with multiple conversations, effectively expanding the context window and improving AI performance.
 
-### Key Improvements Over Original
-- **Cursor-Native**: Designed specifically for Cursor's ecosystem
-- **Role System**: Multi-agent collaboration inspired by Subagents
-- **Enhanced Automation**: Better integration with Cursor Rules
+### Key Improvements Over Original Context Engineering
+- **Cursor-Native**: Designed specifically for Cursor's ecosystem and Cursor Rules
+- **Role System**: Multi-agent collaboration inspired by Subagents concept
+- **Enhanced Automation**: Better integration with Cursor's AI capabilities
 - **International**: Fully documented in English for global adoption
 - **Simplified**: Streamlined for easier adoption and use
+- **Evolution**: Builds upon Context Engineering's solid foundation
 
 ## 🏗️ Template Structure
 
