@@ -1,296 +1,211 @@
-# Context Engineering Template
+# PDD - Prompt Driven Design Template para Cursor
 
-A comprehensive template for getting started with Context Engineering - the discipline of engineering context for AI coding assistants so they have the information necessary to get the job done end to end.
+Una plantilla integral para **PDD (Prompt Driven Design)** adaptada específicamente para Cursor, proporcionando un framework completo para desarrollo asistido por IA.
 
-> **Context Engineering is 10x better than prompt engineering and 100x better than vibe coding.**
+> **PDD es 10x mejor que prompt engineering y 100x mejor que vibe coding.**
 
-## 🚀 Quick Start
+## 🚀 Inicio Rápido
+
+> **📖 Para una guía completa paso a paso, consulta [GUIA_USO.md](GUIA_USO.md)**
 
 ```bash
-# 1. Clone this template
+# 1. Clona esta plantilla
 git clone https://github.com/coleam00/Context-Engineering-Intro.git
 cd Context-Engineering-Intro
 
-# 2. Set up your project rules (optional - template provided)
-# Edit CLAUDE.md to add your project-specific guidelines
+# 2. Configura las reglas del proyecto
+edit GLOBAL_RULES.md
 
-# 3. Add examples (highly recommended)
-# Place relevant code examples in the examples/ folder
+# 3. Agrega ejemplos
+# Coloca ejemplos de código en examples/
 
-# 4. Create your initial feature request
-# Edit INITIAL.md with your feature requirements
+# 4. Crea tu solicitud de característica
+edit FEATURE_REQUEST.md
 
-# 5. Generate a comprehensive PRP (Product Requirements Prompt)
-# In Claude Code, run:
-/generate-prp INITIAL.md
+# 5. Genera un PRP
+"Genera un PRP siguiendo las reglas del proyecto"
 
-# 6. Execute the PRP to implement your feature
-# In Claude Code, run:
-/execute-prp PRPs/your-feature-name.md
+# 6. Ejecuta el PRP
+"Ejecuta el PRP en PRPs/tu-caracteristica.md"
 ```
 
-## 📚 Table of Contents
+## 📚 ¿Qué es PDD (Prompt Driven Design)?
 
-- [What is Context Engineering?](#what-is-context-engineering)
-- [Template Structure](#template-structure)
-- [Step-by-Step Guide](#step-by-step-guide)
-- [Writing Effective INITIAL.md Files](#writing-effective-initialmd-files)
-- [The PRP Workflow](#the-prp-workflow)
-- [Using Examples Effectively](#using-examples-effectively)
-- [Best Practices](#best-practices)
-
-## What is Context Engineering?
-
-Context Engineering represents a paradigm shift from traditional prompt engineering:
-
-### Prompt Engineering vs Context Engineering
+### Prompt Engineering vs PDD
 
 **Prompt Engineering:**
-- Focuses on clever wording and specific phrasing
-- Limited to how you phrase a task
-- Like giving someone a sticky note
+- Se enfoca en frases específicas
+- Limitado a cómo formulas una tarea
+- Como darle a alguien una nota adhesiva
 
-**Context Engineering:**
-- A complete system for providing comprehensive context
-- Includes documentation, examples, rules, patterns, and validation
-- Like writing a full screenplay with all the details
+**PDD (Prompt Driven Design):**
+- Sistema completo para proporcionar contexto integral
+- Incluye documentación, ejemplos, reglas y validación
+- Como escribir un guión completo con todos los detalles
 
-### Why Context Engineering Matters
-
-1. **Reduces AI Failures**: Most agent failures aren't model failures - they're context failures
-2. **Ensures Consistency**: AI follows your project patterns and conventions
-3. **Enables Complex Features**: AI can handle multi-step implementations with proper context
-4. **Self-Correcting**: Validation loops allow AI to fix its own mistakes
-
-## Template Structure
+## 🏗️ Estructura de la Plantilla
 
 ```
-context-engineering-intro/
-├── .claude/
-│   ├── commands/
-│   │   ├── generate-prp.md    # Generates comprehensive PRPs
-│   │   └── execute-prp.md     # Executes PRPs to implement features
-│   └── settings.local.json    # Claude Code permissions
-├── PRPs/
-│   ├── templates/
-│   │   └── prp_base.md       # Base template for PRPs
-│   └── EXAMPLE_multi_agent_prp.md  # Example of a complete PRP
-├── examples/                  # Your code examples (critical!)
-├── CLAUDE.md                 # Global rules for AI assistant
-├── INITIAL.md               # Template for feature requests
-├── INITIAL_EXAMPLE.md       # Example feature request
-└── README.md                # This file
+pdd-cursor-template/
+├── GLOBAL_RULES.md                    # Reglas globales del proyecto
+├── FEATURE_REQUEST.md                 # Plantilla para solicitudes
+├── FEATURE_REQUEST_EXAMPLE.md         # Ejemplo de solicitud
+├── .cursor/
+│   └── rules/
+│       ├── 00-project-global.mdc      # Reglas globales (ejecutable)
+│       ├── 01-feature-request.mdc     # Guía para solicitudes
+│       ├── 02-prp-generator.mdc       # Generación de PRPs
+│       ├── 03-prp-executor.mdc        # Ejecución de PRPs
+│       ├── roles/
+│       │   ├── 01-architect.mdc       # Rol de arquitecto
+│       │   └── 02-developer.mdc       # Rol de desarrollador
+│       └── templates/
+│           └── prp-base.mdc           # Plantilla base para PRPs
+├── prompts/
+│   ├── generate-prp.md                # Prompt para generar PRPs
+│   └── execute-prp.md                 # Prompt para ejecutar PRPs
+├── examples/                          # Ejemplos de código
+├── PRPs/                             # PRPs generados
+└── README.md                         # Este archivo
 ```
 
-This template doesn't focus on RAG and tools with context engineering because I have a LOT more in store for that soon. ;)
+## 🎯 Flujo de Trabajo
 
-## Step-by-Step Guide
+### 1. Configurar Reglas Globales
+Edita `GLOBAL_RULES.md` para definir las reglas de tu proyecto.
 
-### 1. Set Up Global Rules (CLAUDE.md)
-
-The `CLAUDE.md` file contains project-wide rules that the AI assistant will follow in every conversation. The template includes:
-
-- **Project awareness**: Reading planning docs, checking tasks
-- **Code structure**: File size limits, module organization
-- **Testing requirements**: Unit test patterns, coverage expectations
-- **Style conventions**: Language preferences, formatting rules
-- **Documentation standards**: Docstring formats, commenting practices
-
-**You can use the provided template as-is or customize it for your project.**
-
-### 2. Create Your Initial Feature Request
-
-Edit `INITIAL.md` to describe what you want to build:
+### 2. Crear Solicitud de Característica
+Usa `FEATURE_REQUEST.md` para describir lo que quieres construir:
 
 ```markdown
-## FEATURE:
-[Describe what you want to build - be specific about functionality and requirements]
+## 🎯 CARACTERÍSTICA
+[Describe la característica específicamente]
 
-## EXAMPLES:
-[List any example files in the examples/ folder and explain how they should be used]
+## 📚 EJEMPLOS
+[Referencia ejemplos en examples/]
 
-## DOCUMENTATION:
-[Include links to relevant documentation, APIs, or MCP server resources]
+## 📖 DOCUMENTACIÓN
+[Incluye URLs de documentación]
 
-## OTHER CONSIDERATIONS:
-[Mention any gotchas, specific requirements, or things AI assistants commonly miss]
+## ⚠️ OTRAS CONSIDERACIONES
+[Requisitos técnicos, seguridad, etc.]
 ```
 
-**See `INITIAL_EXAMPLE.md` for a complete example.**
-
-### 3. Generate the PRP
-
-PRPs (Product Requirements Prompts) are comprehensive implementation blueprints that include:
-
-- Complete context and documentation
-- Implementation steps with validation
-- Error handling patterns
-- Test requirements
-
-They are similar to PRDs (Product Requirements Documents) but are crafted more specifically to instruct an AI coding assistant.
-
-Run in Claude Code:
-```bash
-/generate-prp INITIAL.md
+### 3. Generar PRP
+Usa el prompt:
+```
+"Genera un PRP siguiendo las reglas del proyecto, tomando como referencia FEATURE_REQUEST.md y los ejemplos en examples/"
 ```
 
-**Note:** The slash commands are custom commands defined in `.claude/commands/`. You can view their implementation:
-- `.claude/commands/generate-prp.md` - See how it researches and creates PRPs
-- `.claude/commands/execute-prp.md` - See how it implements features from PRPs
-
-The `$ARGUMENTS` variable in these commands receives whatever you pass after the command name (e.g., `INITIAL.md` or `PRPs/your-feature.md`).
-
-This command will:
-1. Read your feature request
-2. Research the codebase for patterns
-3. Search for relevant documentation
-4. Create a comprehensive PRP in `PRPs/your-feature-name.md`
-
-### 4. Execute the PRP
-
-Once generated, execute the PRP to implement your feature:
-
-```bash
-/execute-prp PRPs/your-feature-name.md
+### 4. Ejecutar Implementación
+Usa el prompt:
+```
+"Ejecuta el PRP en PRPs/tu-caracteristica.md siguiendo todas las validaciones"
 ```
 
-The AI coding assistant will:
-1. Read all context from the PRP
-2. Create a detailed implementation plan
-3. Execute each step with validation
-4. Run tests and fix any issues
-5. Ensure all success criteria are met
+## 🎭 Sistema de Roles
 
-## Writing Effective INITIAL.md Files
+### 🏗️ Arquitecto
+- Diseña arquitecturas robustas
+- Toma decisiones técnicas de alto nivel
+- Crea documentación de arquitectura
 
-### Key Sections Explained
+### 💻 Desarrollador
+- Implementa funcionalidades
+- Escribe código limpio
+- Crea tests unitarios
 
-**FEATURE**: Be specific and comprehensive
-- ❌ "Build a web scraper"
-- ✅ "Build an async web scraper using BeautifulSoup that extracts product data from e-commerce sites, handles rate limiting, and stores results in PostgreSQL"
+## 🔧 Mejores Prácticas
 
-**EXAMPLES**: Leverage the examples/ folder
-- Place relevant code patterns in `examples/`
-- Reference specific files and patterns to follow
-- Explain what aspects should be mimicked
+### 1. Sé Específico
+- No asumas que la IA conoce tus preferencias
+- Incluye requisitos específicos y restricciones
+- Referencia ejemplos liberalmente
 
-**DOCUMENTATION**: Include all relevant resources
-- API documentation URLs
-- Library guides
-- MCP server documentation
-- Database schemas
+### 2. Proporciona Ejemplos
+- Más ejemplos = mejores implementaciones
+- Muestra qué hacer y qué no hacer
+- Incluye patrones de manejo de errores
 
-**OTHER CONSIDERATIONS**: Capture important details
-- Authentication requirements
-- Rate limits or quotas
-- Common pitfalls
-- Performance requirements
+### 3. Usa Validaciones
+- Los PRPs incluyen comandos de test que deben pasar
+- La IA iterará hasta que todas las validaciones tengan éxito
+- Esto asegura código funcional en el primer intento
 
-## The PRP Workflow
+### 4. Aprovecha la Documentación
+- Incluye documentación oficial de APIs
+- Agrega recursos relevantes
+- Referencia secciones específicas
 
-### How /generate-prp Works
+### 5. Personaliza Reglas
+- Agrega tus convenciones
+- Incluye reglas específicas del proyecto
+- Define estándares de coding
 
-The command follows this process:
+## 📊 Beneficios
 
-1. **Research Phase**
-   - Analyzes your codebase for patterns
-   - Searches for similar implementations
-   - Identifies conventions to follow
+1. **Reduce Fallos de IA**: La mayoría de fallos no son del modelo, sino de contexto
+2. **Asegura Consistencia**: La IA sigue patrones y convenciones del proyecto
+3. **Permite Características Complejas**: Maneja implementaciones multi-paso
+4. **Auto-corrección**: Bucles de validación permiten corrección automática
 
-2. **Documentation Gathering**
-   - Fetches relevant API docs
-   - Includes library documentation
-   - Adds gotchas and quirks
+## 🚀 Casos de Uso
 
-3. **Blueprint Creation**
-   - Creates step-by-step implementation plan
-   - Includes validation gates
-   - Adds test requirements
+### Proyecto Nuevo
+1. Configuración inicial
+2. Definir característica inicial
+3. Generar PRP completo
+4. Ejecutar implementación
 
-4. **Quality Check**
-   - Scores confidence level (1-10)
-   - Ensures all context is included
+### Proyecto Existente
+1. Análisis automático del código
+2. Generar plan de refactorización
+3. Ejecutar mejoras incrementales
+4. Validación automática
 
-### How /execute-prp Works
+### Extensión de Funcionalidad
+1. Definir nueva característica
+2. Generar PRP especializado
+3. Implementación con validación automática
 
-1. **Load Context**: Reads the entire PRP
-2. **Plan**: Creates detailed task list using TodoWrite
-3. **Execute**: Implements each component
-4. **Validate**: Runs tests and linting
-5. **Iterate**: Fixes any issues found
-6. **Complete**: Ensures all requirements met
+## 📚 Recursos
 
-See `PRPs/EXAMPLE_multi_agent_prp.md` for a complete example of what gets generated.
+- [Documentación de Cursor](https://docs.cursor.com/)
+- [PDD Best Practices](https://www.philschmid.de/context-engineering)
+- [Cursor Rules Documentation](https://docs.cursor.com/context/rules)
 
-## Using Examples Effectively
+## 🚀 Flowtask-ai
 
-The `examples/` folder is **critical** for success. AI coding assistants perform much better when they can see patterns to follow.
+Este proyecto es parte de [Flowtask-ai](https://github.com/Flowtask-ai), una organización dedicada a crear herramientas y metodologías para mejorar la productividad del desarrollo con IA.
 
-### What to Include in Examples
+### 🌟 Características de Flowtask-ai
 
-1. **Code Structure Patterns**
-   - How you organize modules
-   - Import conventions
-   - Class/function patterns
+- **Metodologías probadas**: PDD y otras técnicas de desarrollo con IA
+- **Templates optimizados**: Plantillas listas para usar
+- **Comunidad activa**: Soporte y colaboración continua
+- **Innovación constante**: Nuevas herramientas y mejoras
 
-2. **Testing Patterns**
-   - Test file structure
-   - Mocking approaches
-   - Assertion styles
+## 🤝 Contribuir
 
-3. **Integration Patterns**
-   - API client implementations
-   - Database connections
-   - Authentication flows
+1. Fork el repositorio
+2. Crea una rama para tu característica (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
-4. **CLI Patterns**
-   - Argument parsing
-   - Output formatting
-   - Error handling
+### 📋 Guías de Contribución
 
-### Example Structure
+- **Sigue PDD**: Usa esta misma metodología para contribuir
+- **Documenta cambios**: Actualiza README.md y GUIA_USO.md
+- **Mantén calidad**: Asegúrate de que los tests pasen
+- **Sé específico**: Describe claramente tus cambios
 
-```
-examples/
-├── README.md           # Explains what each example demonstrates
-├── cli.py             # CLI implementation pattern
-├── agent/             # Agent architecture patterns
-│   ├── agent.py      # Agent creation pattern
-│   ├── tools.py      # Tool implementation pattern
-│   └── providers.py  # Multi-provider pattern
-└── tests/            # Testing patterns
-    ├── test_agent.py # Unit test patterns
-    └── conftest.py   # Pytest configuration
-```
+## 📄 Licencia
 
-## Best Practices
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
 
-### 1. Be Explicit in INITIAL.md
-- Don't assume the AI knows your preferences
-- Include specific requirements and constraints
-- Reference examples liberally
+## 📞 Contacto
 
-### 2. Provide Comprehensive Examples
-- More examples = better implementations
-- Show both what to do AND what not to do
-- Include error handling patterns
-
-### 3. Use Validation Gates
-- PRPs include test commands that must pass
-- AI will iterate until all validations succeed
-- This ensures working code on first try
-
-### 4. Leverage Documentation
-- Include official API docs
-- Add MCP server resources
-- Reference specific documentation sections
-
-### 5. Customize CLAUDE.md
-- Add your conventions
-- Include project-specific rules
-- Define coding standards
-
-## Resources
-
-- [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
-- [Context Engineering Best Practices](https://www.philschmid.de/context-engineering)
+- **GitHub**: [Flowtask-ai](https://github.com/Flowtask-ai)
+- **Issues**: [Reportar problemas](https://github.com/Flowtask-ai/pdd-cursor-template/issues)
+- **Discussions**: [Discusiones](https://github.com/Flowtask-ai/pdd-cursor-template/discussions)

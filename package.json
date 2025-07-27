@@ -1,0 +1,36 @@
+{
+  "name": "pdd-cursor-template",
+  "version": "1.0.0",
+  "description": "PDD (Prompt Driven Design) Template para Cursor - Framework completo para desarrollo asistido por IA",
+  "main": "README.md",
+  "keywords": [
+    "pdd",
+    "prompt-driven-design",
+    "cursor",
+    "ai",
+    "development",
+    "template",
+    "context-engineering",
+    "prompt-engineering"
+  ],
+  "author": "Flowtask-ai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Flowtask-ai/pdd-cursor-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Flowtask-ai/pdd-cursor-template/issues"
+  },
+  "homepage": "https://github.com/Flowtask-ai/pdd-cursor-template#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "setup": "echo 'PDD Template configurado correctamente'",
+    "validate": "echo 'Validando estructura del proyecto...'",
+    "docs": "echo 'Documentación disponible en README.md y GUIA_USO.md'"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+} 

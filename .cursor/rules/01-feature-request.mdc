@@ -1,0 +1,79 @@
+# Guía para Solicitudes de Características
+
+## 🎯 Estructura de FEATURE_REQUEST.md
+
+Cuando trabajes con solicitudes de características, sigue esta estructura:
+
+### Sección CARACTERÍSTICA
+- **Sé específico y detallado** sobre la funcionalidad requerida
+- **Incluye requisitos técnicos** específicos
+- **Define el comportamiento esperado** claramente
+- **Evita descripciones vagas** como "crear un scraper"
+
+### Sección EJEMPLOS
+- **Referencia ejemplos existentes** en la carpeta `examples/`
+- **Explica cómo usar los ejemplos** como inspiración, no para copiar directamente
+- **Identifica patrones específicos** a seguir
+
+### Sección DOCUMENTACIÓN
+- **Incluye URLs de documentación oficial** de APIs y librerías
+- **Agrega recursos adicionales** como GitHub repos, Stack Overflow posts
+- **Especifica versiones** de librerías si es relevante
+
+### Sección OTRAS CONSIDERACIONES
+- **Lista requisitos técnicos** específicos (rate limits, autenticación, etc.)
+- **Incluye consideraciones de seguridad** relevantes
+- **Menciona requisitos de UX** si aplica
+- **Documenta gotchas conocidas** que los asistentes de IA suelen olvidar
+
+### Sección CRITERIOS DE ÉXITO
+- **Define métricas específicas** de funcionalidad
+- **Incluye criterios de calidad** (tests, documentación, etc.)
+- **Especifica métricas de rendimiento** si aplica
+
+## 🔍 Análisis de Solicitudes
+
+### Preguntas Clave a Considerar
+1. **¿Es la descripción suficientemente específica?**
+2. **¿Se han incluido todos los ejemplos relevantes?**
+3. **¿Está la documentación completa y actualizada?**
+4. **¿Se han considerado todos los edge cases?**
+5. **¿Son los criterios de éxito medibles?**
+
+### Validación de Solicitudes
+- **Verifica que la característica sea factible** con las tecnologías disponibles
+- **Confirma que los ejemplos referenciados** existen en el proyecto
+- **Asegúrate de que la documentación** esté accesible y actualizada
+- **Valida que los criterios de éxito** sean alcanzables
+
+## 📋 Proceso de Refinamiento
+
+### Mejoras Sugeridas
+- **Agregar más detalles** si la descripción es vaga
+- **Incluir ejemplos adicionales** si faltan patrones relevantes
+- **Expandir documentación** si hay gaps en la información
+- **Clarificar criterios de éxito** si no son específicos
+
+### Preguntas de Aclaración
+- **¿Hay restricciones de tiempo** o recursos?
+- **¿Existen dependencias** con otras características?
+- **¿Hay requisitos de compatibilidad** específicos?
+- **¿Se requiere integración** con sistemas existentes?
+
+## 🎯 Mejores Prácticas
+
+### Escritura de Solicitudes
+- **Usa lenguaje técnico preciso** pero comprensible
+- **Proporciona contexto suficiente** para entender el problema
+- **Incluye ejemplos de uso** cuando sea posible
+- **Especifica restricciones** y limitaciones claramente
+
+### Organización de Información
+- **Agrupa información relacionada** en secciones lógicas
+- **Usa listas y tablas** para información estructurada
+- **Incluye enlaces directos** a recursos externos
+- **Mantén un formato consistente** con el resto del proyecto
+description:
+globs:
+alwaysApply: false
+---
