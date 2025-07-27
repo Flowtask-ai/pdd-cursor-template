@@ -48,6 +48,8 @@ edit FEATURE_REQUEST.md
 ### Original Context Engineering
 This template is inspired by the **Context Engineering** methodology originally developed for Claude Code. The original creators pioneered the concept of providing comprehensive context to AI assistants through structured documentation, examples, and validation systems.
 
+**Original Repository**: [Context Engineering Intro](https://github.com/coleam00/Context-Engineering-Intro) by [@coleam00](https://github.com/coleam00)
+
 ### Adaptation for Cursor
 We've adapted and evolved this methodology specifically for **Cursor**, leveraging its unique features:
 
@@ -56,7 +58,7 @@ We've adapted and evolved this methodology specifically for **Cursor**, leveragi
 - **Enhanced Workflow**: Streamlined process optimized for Cursor's AI capabilities
 
 ### Innovation: Role-Based Development
-Building on Cursor's recent **Subagents** feature, we've introduced a **role-based development system** that enables:
+Inspired by the **Subagents** concept from Claude Code, we've introduced a **role-based development system** that enables:
 
 - **Specialized AI Roles**: Architect, Developer, Tester, Reviewer, Documenter
 - **Parallel Conversations**: Work with multiple specialized AI agents simultaneously
@@ -134,7 +136,7 @@ Use the prompt:
 
 ## 🎭 Role System
 
-Our **role-based development system** is inspired by Cursor's Subagents feature, enabling specialized AI collaboration:
+Our **role-based development system** is conceptually inspired by the Subagents approach from Claude Code, enabling specialized AI collaboration:
 
 ### 🏗️ Architect
 - Designs robust architectures
@@ -268,7 +270,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 This template builds upon the groundbreaking **Context Engineering** methodology. We extend our gratitude to the original creators who pioneered this approach for AI-assisted development. Their work on providing comprehensive context to AI assistants has fundamentally changed how we think about AI collaboration.
 
 ### Cursor Team
-Special thanks to the **Cursor team** for creating such a powerful development environment and for the recent **Subagents** feature that inspired our role-based development system. Their continuous innovation in AI-assisted development tools makes projects like this possible.
+Special thanks to the **Cursor team** for creating such a powerful development environment. Their continuous innovation in AI-assisted development tools makes projects like this possible.
+
+### Claude Code Team
+We also acknowledge the **Claude Code team** for the **Subagents** concept that inspired our role-based development approach. While we use Cursor, the conceptual inspiration from their multi-agent collaboration features has been valuable.
 
 ### Community
 To the open-source community and all contributors who believe in the power of AI-assisted development. Your feedback, contributions, and adoption help us improve and evolve this methodology.
