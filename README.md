@@ -130,11 +130,11 @@ A comprehensive PRP includes:
 4. Create authentication middleware
 
 ## Validation Commands
-```bash
+\`\`\`bash
 pytest tests/test_auth.py -v
 ruff check src/auth/
 mypy src/auth/
-```
+\`\`\`
 
 ## Success Criteria
 - [ ] Registration endpoint returns 201
