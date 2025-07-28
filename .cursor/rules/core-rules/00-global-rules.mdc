@@ -1,7 +1,5 @@
 # Global Project Rules - PDD
 
-Rules that govern development in this project using PDD (Prompt Driven Design). They are automatically applied through the Cursor Rules system.
-
 ## 🔄 Project Awareness
 
 - **Read `README.md`** at the beginning of each conversation
@@ -13,55 +11,16 @@ Rules that govern development in this project using PDD (Prompt Driven Design). 
 - **Maximum 500 lines per file** - refactor if necessary
 - **Organize in modules** by feature or responsibility
 - **Use relative imports** within packages
-- **Use `python-dotenv`** for environment variables
+- **Use environment variables** for configuration
+- **Organize in modules** by feature or responsibility
 
-### Architecture Patterns
 
-**For AI agents:**
-```
-agents/
-├── __init__.py
-├── agent.py          # Main logic
-├── tools.py          # Tools
-├── prompts.py        # System prompts
-└── models.py         # Data models
-```
-
-**For APIs:**
-```
-api/
-├── __init__.py
-├── routes/           # Endpoints
-├── models/           # Models
-├── services/         # Business logic
-└── middleware/       # Middleware
-```
-
-## 🧪 Testing and Quality
-
-- **Create unit tests** for each feature
-- **Maintain coverage >90%**
-- **Run automatic validations** after changes
-- **Fix errors automatically** when possible
-
-### Automatic Validations
-```bash
-# Syntax and style
-ruff check --fix && mypy .
-
-# Unit tests
-pytest tests/ -v
-
-# Coverage
-pytest --cov=src --cov-report=html
-```
 
 ## 📎 Style and Conventions
 
-- **Python** as primary language
-- **Follow PEP8** with type hints
-- **Use `pydantic`** for validation
-- **FastAPI** for APIs, **SQLAlchemy** for ORM
+- **Maximum 500 lines per file** - refactor if necessary for maintainability
+- **Use consistent naming conventions** across all files
+- **Follow language-specific style guides** for each technology
 
 ### Code Documentation
 ```python
@@ -96,13 +55,13 @@ def example_function(param1: str, param2: int) -> bool:
 
 - **Update `README.md`** with new features
 - **Keep docstrings** updated
-- **Document patterns** in `examples/`
+- **Document patterns** in `.cursor/rules/code-examples/`
 - **Use semantic versioning** for releases
 
 ## 🎯 PDD (Prompt Driven Design) Methodology
 
 ### Workflow
-1. **Define feature** in `FEATURE_REQUEST.md`
+1. **Define feature** in `PDD/PRDs/requests/your-feature.md`
 2. **Generate PRP** using project rules
 3. **Execute implementation** with validations
 4. **Validate and iterate** until success
@@ -117,4 +76,4 @@ def example_function(param1: str, param2: int) -> bool:
 - **All tests pass** automatically
 - **Code follows patterns** from examples
 - **Documentation is updated** and accurate
-- **No regressions** in existing functionality 
+- **No regressions** in existing functionality

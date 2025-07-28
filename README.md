@@ -13,20 +13,19 @@ A comprehensive template for **PDD (Prompt Driven Design)** specifically adapted
 git clone https://github.com/Flowtask-ai/pdd-cursor-template.git
 cd pdd-cursor-template
 
-# 2. Configure project rules
-edit GLOBAL_RULES.md
+# 2. Review project structure
+# Check PDD/PRDs/templates/ for available templates
+# Check PDD/PRDs/examples/ for inspiration
 
-# 3. Add examples
-# Place code examples in examples/
+# 3. Create your PRD
+# Copy a template from PDD/PRDs/templates/ to PDD/PRDs/requests/
+# Fill it with your specific requirements
 
-# 4. Create your feature request
-edit FEATURE_REQUEST.md
+# 4. Generate a PRP
+"Generate a PRP from PDD/PRDs/requests/your-file.md"
 
-# 5. Generate a PRP
-"Generate a PRP following the project rules"
-
-# 6. Execute the PRP
-"Execute the PRP in PRPs/your-feature.md"
+# 5. Execute the PRP
+"Execute the PRP in PDD/PRPs/generated/your-file.md"
 ```
 
 ## 📚 What is PDD (Prompt Driven Design)?
@@ -185,25 +184,28 @@ This approach not only provides specialization but also leverages Cursor's abili
 
 ```
 pdd-cursor-template/
-├── GLOBAL_RULES.md                    # Global project rules
-├── FEATURE_REQUEST.md                 # Feature request template
-├── FEATURE_REQUEST_EXAMPLE.md         # Feature request example
 ├── .cursor/
 │   └── rules/
-│       ├── 00-project-global.mdc      # Global rules (executable)
-│       ├── 01-feature-request.mdc     # Feature request guide
-│       ├── 02-prp-generator.mdc       # PRP generation
-│       ├── 03-prp-executor.mdc        # PRP execution
-│       ├── roles/
-│       │   ├── 01-architect.mdc       # Architect role
-│       │   └── 02-developer.mdc       # Developer role
-│       └── templates/
-│           └── prp-base.mdc           # Base PRP template
-├── prompts/
-│   ├── generate-prp.md                # Prompt to generate PRPs
-│   └── execute-prp.md                 # Prompt to execute PRPs
-├── examples/                          # Code examples
-├── PRPs/                             # Generated PRPs
+│       ├── core-rules/
+│       │   ├── 00-project-global.mdc      # Global rules (executable)
+│       │   ├── 01-feature-request.mdc     # Feature request guide
+│       │   ├── 02-prp-generator.mdc       # PRP generation
+│       │   ├── 03-prp-executor.mdc        # PRP execution
+│       │   ├── roles/
+│       │   │   ├── 01-architect.mdc       # Architect role
+│       │   │   └── 02-developer.mdc       # Developer role
+│       │   └── templates/
+│       │       └── prp-base.md           # Base PRP template
+│       ├── commands/
+│       │   ├── 01-generate-prp.mdc       # Prompt to generate PRPs
+│       │   └── 02-execute-prp.mdc         # Prompt to execute PRPs
+│       └── code-examples/
+│           ├── 01-auth.mdc                # Auth example
+│           └── 02-user-management.mdc     # User management example
+├── PRDs/
+│   ├── templates/
+│   └── requests/
+├── PRPs/
 └── README.md                         # This file
 ```
 
@@ -334,9 +336,9 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 **Scope**: Complete application with multiple features
 
 **Workflow**:
-1. **Create PRD**: Use `PDD/PRDs/templates/new-bc-XXX.md` to define your project
-2. **Generate PRP**: Use "Generate a PRP for [description]" to create implementation plan
-3. **Execute Foundation**: Use "Execute the PRP in [file]" to build the system
+1. **Create PRD**: Copy `PDD/PRDs/templates/new-bc-XXX.md` to `PDD/PRDs/requests/` and fill it
+2. **Generate PRP**: Use "Generate a PRP from PDD/PRDs/requests/your-file.md"
+3. **Execute Foundation**: Use "Execute the PRP in PDD/PRPs/generated/your-file.md"
 4. **Iterate**: Add features incrementally using the same methodology
 
 **Example**: *"Create a complete e-commerce platform with React frontend, FastAPI backend, PostgreSQL database, and payment integration"*
@@ -349,9 +351,9 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 **Scope**: Single feature or module within existing architecture
 
 **Workflow**:
-1. **Create PRD**: Use `PDD/PRDs/templates/new-feature-YYY-bc-XXX.md` for specific functionality
-2. **Generate Feature PRP**: Use "Generate a PRP for [feature description]"
-3. **Execute with Validation**: Use "Execute the PRP in [file]" ensuring no breaking changes
+1. **Create PRD**: Copy `PDD/PRDs/templates/new-feature-YYY-bc-XXX.md` to `PDD/PRDs/requests/` and fill it
+2. **Generate Feature PRP**: Use "Generate a PRP from PDD/PRDs/requests/your-file.md"
+3. **Execute with Validation**: Use "Execute the PRP in PDD/PRPs/generated/your-file.md"
 4. **Integrate**: Connect with existing systems and validate
 
 **Example**: *"Add push notifications to existing user management system"*
@@ -364,9 +366,9 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 **Scope**: Code quality, architecture improvements, technical debt
 
 **Workflow**:
-1. **Create PRD**: Use `PDD/PRDs/templates/improve-bc-XXX.md` to define improvements
-2. **Generate Improvement Plan**: Use "Generate a PRP for [improvement description]"
-3. **Execute Incrementally**: Use "Execute the PRP in [file]" step by step
+1. **Create PRD**: Copy `PDD/PRDs/templates/improve-bc-XXX.md` to `PDD/PRDs/requests/` and fill it
+2. **Generate Improvement Plan**: Use "Generate a PRP from PDD/PRDs/requests/your-file.md"
+3. **Execute Incrementally**: Use "Execute the PRP in PDD/PRPs/generated/your-file.md"
 4. **Validate Continuously**: Ensure no regressions during improvements
 5. **Document Changes**: Update documentation and examples
 

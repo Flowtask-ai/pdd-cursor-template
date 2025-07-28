@@ -9,15 +9,33 @@ When the user requests to generate a PRP (Product Requirements Prompt), follow t
 - **Read the PRD file** completely (usually in `PDD/PRDs/`)
 - **Identify all requirements** (functional, technical, constraints)
 - **Review referenced examples** in `PDD/PRDs/examples/`
-- **Check project patterns** in `.cursor/rules/pattern-examples/`
+- **Check project patterns** in `.cursor/rules/code-examples/`
 
-### 2. Research Context
+### 2. Validate PRD Quality
+**Key Questions to Consider:**
+- Is the description sufficiently specific?
+- Have all relevant examples been included?
+- Is the documentation complete and up-to-date?
+- Have all edge cases been considered?
+- Are the success criteria measurable?
+
+**PRD Validation Checklist:**
+- [ ] **Specific and detailed** about project/feature purpose
+- [ ] **Technical requirements** and constraints included
+- [ ] **Expected behavior** clearly defined
+- [ ] **Examples referenced** from `PDD/PRDs/examples/`
+- [ ] **Documentation URLs** for APIs and libraries included
+- [ ] **Security considerations** where relevant
+- [ ] **Success criteria** are specific and measurable
+- [ ] **No vague descriptions** like "create a scraper"
+
+### 3. Research Context
 - **Search existing codebase** for similar patterns
 - **Consult official documentation** for libraries mentioned
 - **Identify best practices** and common gotchas
 - **Review project architecture** and conventions
 
-### 3. Create PRP Structure
+### 4. Create PRP Structure
 Use this template structure:
 
 ```markdown
@@ -78,9 +96,23 @@ Rate the PRP quality (1-10) based on:
 ## 📤 Output
 - **Save PRP** in `PDD/PRPs/[feature-name].md`
 - **Include confidence score** and justification
-- **Reference the template** in `PDD/PRPs/templates/prp-base.mdc`
+- **Reference the template** in `PDD/PRPs/templates/prp-base.md`
 
 ## 🎯 Best Practices
+
+### Writing PRDs
+- **Use precise technical language** but understandable
+- **Provide sufficient context** to understand the problem
+- **Include usage examples** when possible
+- **Specify constraints** and limitations clearly
+
+### Information Organization
+- **Group related information** in logical sections
+- **Use lists and tables** for structured information
+- **Include direct links** to external resources
+- **Maintain consistent formatting** with the rest of the project
+
+### PRP Generation
 - **Be specific**: Avoid vague descriptions
 - **Include examples**: Reference existing patterns
 - **Anticipate problems**: Address common issues
@@ -94,3 +126,4 @@ description:
 globs:
 alwaysApply: false
 ---
+ 

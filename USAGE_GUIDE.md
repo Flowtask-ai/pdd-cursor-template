@@ -20,21 +20,33 @@ Understanding the template structure is crucial for effective use. Here's what e
 pdd-cursor-template/
 ├── 📄 README.md                    # Main documentation and overview
 ├── 📄 USAGE_GUIDE.md              # This guide - step-by-step instructions
-├── 📄 GLOBAL_RULES.md             # Human-readable project rules and conventions
+├── 📄 LICENSE                     # MIT License (Flowtask-ai + Cole Medin attribution)
 ├── 📄 LICENSE                     # MIT License (Flowtask-ai + Cole Medin attribution)
 ├── 📄 package.json                # Project metadata and dependencies
 │
 ├── 📁 .cursor/
 │   └── 📁 rules/                  # Cursor Rules (automatic AI context)
-│       ├── 📄 00-project-global.mdc      # Global project rules for AI
-│       ├── 📄 01-feature-request.mdc     # Rules for feature request interpretation
-│       ├── 📄 02-prp-generator.mdc       # Rules for PRP generation
-│       ├── 📄 03-prp-executor.mdc        # Rules for PRP execution
-│       ├── 📁 roles/                     # Specialized AI roles
-│       │   ├── 📄 01-architect.mdc       # Architecture-focused AI behavior
-│       │   └── 📄 02-developer.mdc       # Development-focused AI behavior
-│       └── 📁 templates/                 # AI templates
-│           └── 📄 prp-base.mdc           # Base template for PRP generation
+│       ├── 📁 core-rules/               # Core project rules
+│       │   ├── 📄 00-global-rules.mdc   # Global project rules
+│       │   ├── 📄 01-domain-architecture.mdc
+│       │   ├── 📄 02-backend-development.mdc
+│       │   ├── 📄 03-frontend-development.mdc
+│       │   ├── 📄 04-testing-strategy.mdc
+│       │   ├── 📄 05-quality-assurance.mdc
+│       │   └── 📄 06-ci-cd-pipeline.mdc
+│       ├── 📁 commands/                 # Commands for PDD workflow
+│       │   ├── 📄 01-generate-prp.mdc   # Command to generate PRPs
+│       │   └── 📄 02-execute-prp.mdc    # Command to execute PRPs
+│       ├── 📁 roles/                    # Specialized AI roles
+│       │   ├── 📄 01-architect.mdc      # Architecture-focused AI behavior
+│       │   └── 📄 02-developer.mdc      # Development-focused AI behavior
+│       └── 📁 code-examples/            # Code patterns and examples
+│           ├── 📄 01-domain.mdc
+│           ├── 📄 02-backend.mdc
+│           ├── 📄 03-frontend.mdc
+│           ├── 📄 04-testing.mdc
+│           ├── 📄 05-quality.mdc
+│           └── 📄 06-ci-cd.mdc
 │
 ├── 📁 PDD/                        # Prompt Driven Design
 │   ├── 📁 PRDs/                   # Product Requirements Documents
@@ -46,15 +58,14 @@ pdd-cursor-template/
 │   │   │   ├── 📄 new-bc-ecommerce.md # Example: Complete e-commerce project
 │   │   │   ├── 📄 new-feature-notifications-bc-auth.md  # Example: Notifications feature
 │   │   │   └── 📄 improve-bc-auth.md  # Example: Auth system improvements
-│   │   └── (Your PRDs will appear here)
+│   │   └── 📁 requests/           # Your PRDs go here
+│   │       └── 📄 README.md       # Instructions for creating PRDs
 │   │
 │   └── 📁 PRPs/                   # Product Requirements Prompts (generated)
 │       ├── 📁 templates/          # Templates for PRPs
-│       │   └── 📄 prp-base.mdc    # Base template for generating PRPs
-│       ├── 📁 commands/           # Commands for generate/execute PRPs
-│       │   ├── 📄 generate-prp.md # Prompt to generate a PRP
-│       │   └── 📄 execute-prp.md  # Prompt to execute a PRP
-│       └── (Your generated PRPs will appear here)
+│       │   └── 📄 prp-base.md    # Base template for generating PRPs
+│       └── 📁 generated/          # Generated PRPs go here
+│           └── 📄 README.md       # Instructions for generated PRPs
 │
 └── 📁 .github/                    # GitHub configuration
     └── 📁 ISSUE_TEMPLATE/         # Issue templates for contributions
@@ -67,17 +78,17 @@ pdd-cursor-template/
 #### **📄 Core Documentation**
 - **`README.md`**: Main project overview, methodology explanation, and quick start
 - **`USAGE_GUIDE.md`**: Detailed step-by-step instructions (this file)
-- **`GLOBAL_RULES.md`**: Human-readable rules that mirror the AI rules
+- **`.cursor/rules/core-rules/`**: AI rules that are automatically applied by Cursor
 
 #### **📄 Templates & Examples**
 - **`PDD/PRDs/templates/`**: Templates for each use case (new BC, new feature, improve BC)
 - **`PDD/PRDs/examples/`**: Filled examples for inspiration and reference
-- **`.cursor/rules/pattern-examples/`**: Code patterns and reference implementations
+- **`.cursor/rules/code-examples/`**: Code patterns and reference implementations
 
 #### **🤖 AI Configuration**
 - **`.cursor/rules/`**: Automatic context for Cursor's AI (always active)
-- **`PDD/PRPs/commands/`**: Manual prompts you can copy-paste to trigger specific actions
-- **`PDD/PRPs/`**: Where generated Product Requirements Prompts are stored
+- **`.cursor/rules/commands/`**: Commands that guide AI behavior for specific tasks
+- **`PDD/PRPs/generated/`**: Where generated Product Requirements Prompts are stored
 
 #### **⚙️ Project Configuration**
 - **`package.json`**: Project metadata, useful for publishing and dependencies
@@ -86,10 +97,10 @@ pdd-cursor-template/
 
 ### 🎯 How It All Works Together:
 
-1. **Setup**: Configure `GLOBAL_RULES.md` and review patterns in `.cursor/rules/pattern-examples/`
-2. **Create PRD**: Choose appropriate template from `PDD/PRDs/templates/` and fill it out
-3. **Generate PRP**: Use `PDD/PRPs/commands/generate-prp.md` to create implementation plan
-4. **Execute**: Use `PDD/PRPs/commands/execute-prp.md` to implement following all rules and validations
+1. **Setup**: Review patterns in `.cursor/rules/code-examples/` and project structure
+2. **Create PRD**: Copy appropriate template from `PDD/PRDs/templates/` to `PDD/PRDs/requests/` and fill it out
+3. **Generate PRP**: Use "Generate a PRP from PDD/PRDs/requests/your-file.md" to create implementation plan
+4. **Execute**: Use "Execute the PRP in PDD/PRPs/generated/your-file.md" to implement following all rules and validations
 5. **Validate**: AI automatically runs tests and fixes issues based on rules
 
 ---
@@ -107,36 +118,34 @@ cd pdd-cursor-template
 cursor .
 ```
 
-### Step 2: Customize Global Rules
+### Step 2: Review Project Structure
 
-Edit `GLOBAL_RULES.md` for your project:
+Familiarize yourself with the template structure:
 
-```markdown
-## 🧱 Code Structure
+```bash
+# Review available templates
+ls PDD/PRDs/templates/
 
-- **Language**: Python 3.11+
-- **Framework**: FastAPI
-- **Database**: PostgreSQL
-- **Testing**: pytest
-- **Formatting**: Black + isort
+# Review examples for inspiration
+ls PDD/PRDs/examples/
+
+# Review code patterns
+ls .cursor/rules/code-examples/
 ```
 
-### Step 3: Add Examples
+### Step 3: Create Your First PRD
 
-Create examples in `examples/` following this structure:
+Copy a template to get started:
 
-```
-examples/
-├── api/
-│   └── fastapi_basic/
-│       ├── main.py
-│       └── models.py
-├── database/
-│   └── sqlalchemy_models/
-│       └── user.py
-└── testing/
-    └── unit_tests/
-        └── test_user.py
+```bash
+# For a new project
+cp PDD/PRDs/templates/new-bc-XXX.md PDD/PRDs/requests/new-bc-myproject.md
+
+# For a new feature
+cp PDD/PRDs/templates/new-feature-YYY-bc-XXX.md PDD/PRDs/requests/new-feature-auth-bc-user.md
+
+# For improvements
+cp PDD/PRDs/templates/improve-bc-XXX.md PDD/PRDs/requests/improve-bc-auth.md
 ```
 
 ---
@@ -170,23 +179,17 @@ Copy and edit `PDD/PRDs/templates/new-bc-XXX.md`:
 4. **Security**: JWT authentication, password hashing, rate limiting
 
 ## 📚 Examples to Follow
-- `examples/api/fastapi_basic/` - Backend patterns
-- `examples/auth/jwt_authentication/` - Authentication patterns
-- `examples/database/sqlalchemy_models/` - Data modeling patterns
+- `.cursor/rules/code-examples/01-backend.mdc` - Backend patterns
+- `.cursor/rules/code-examples/04-testing.mdc` - Testing patterns
+- `.cursor/rules/code-examples/02-backend.mdc` - Data modeling patterns
 ```
 
 #### Step 2: Generate PRP
 
-Use the command from `PDD/PRPs/commands/generate-prp.md`:
+Use the command to generate a PRP:
 
 ```
-Generate a PRP following the project rules, taking as reference PDD/PRDs/new-bc-user-management.md and patterns in .cursor/rules/pattern-examples/. The PRP should include:
-
-1. System architecture
-2. File structure
-3. Step-by-step implementation
-4. Validation tests
-5. Execution commands
+Generate a PRP from PDD/PRDs/requests/new-bc-user-management.md
 ```
 
 #### Step 3: Execute Implementation
@@ -206,8 +209,8 @@ Execute the PRP in PDD/PRPs/user-management-system.md following all validations 
 **Situation**: You want to create a completely new project with frontend and backend.
 
 **Steps**:
-1. **Configure rules**: Edit `GLOBAL_RULES.md` with your tech stack
-2. **Add examples**: Create basic examples in `examples/`
+1. **Review rules**: Check `.cursor/rules/core-rules/` for your tech stack
+2. **Add examples**: Add PRD examples in `PDD/PRDs/examples/` and code patterns in `.cursor/rules/code-examples/`
 3. **Create PRD**: Copy `PDD/PRDs/templates/new-bc-XXX.md` and fill it out
 4. **Generate PRP**: Use `PDD/PRPs/commands/generate-prp.md` to create implementation plan
 5. **Execute**: Use `PDD/PRPs/commands/execute-prp.md` to build the system
@@ -254,28 +257,28 @@ Generate a PRP to add a push notification system to the existing authentication 
 
 **Solution**:
 1. Verify that `.cursor/rules/00-project-global.mdc` is well configured
-2. Use more specific prompts: "Follow EXACTLY the rules in GLOBAL_RULES.md"
-3. Reference specific examples: "Use the pattern from examples/api/fastapi_basic/"
+2. Use more specific prompts: "Follow EXACTLY the rules in .cursor/rules/core-rules/"
+3. Reference specific examples: "Use the pattern from .cursor/rules/code-examples/01-backend.mdc"
 
 ### Problem: Tests fail after implementation
 
 **Solution**:
 1. Make sure the PRP includes validation commands
 2. Use: "Execute the PRP and automatically fix any test errors"
-3. Verify that examples in `examples/` are correct
+3. Verify that code patterns in `.cursor/rules/code-examples/` are correct
 
 ### Problem: Code doesn't follow project style
 
 **Solution**:
-1. Add formatting rules in `GLOBAL_RULES.md`
-2. Include style examples in `examples/`
+1. Add formatting rules in `.cursor/rules/core-rules/`
+2. Include style examples in `.cursor/rules/code-examples/`
 3. Use: "Make sure to follow the code style defined in the rules"
 
 ### Problem: AI doesn't understand context
 
 **Solution**:
-1. Be more specific in `FEATURE_REQUEST.md`
-2. Add more examples in `examples/`
+1. Be more specific in your PRD file
+2. Add more PRD examples in `PDD/PRDs/examples/`
 3. Use more detailed prompts with specific context
 
 ---
@@ -313,7 +316,7 @@ Add comments in the code explaining important decisions:
 
 ### 4. Keep Examples Updated
 
-Update `examples/` with patterns that work well in your project.
+Update `.cursor/rules/code-examples/` with patterns that work well in your project.
 
 ---
 
@@ -321,11 +324,11 @@ Update `examples/` with patterns that work well in your project.
 
 Before starting, verify:
 
-- [ ] `GLOBAL_RULES.md` is customized for your project
-- [ ] `examples/` has relevant patterns
+- [ ] `.cursor/rules/core-rules/` is configured for your project
+- [ ] `.cursor/rules/code-examples/` has relevant patterns
 - [ ] `.cursor/rules/` is correctly configured
 - [ ] You understand the basic workflow
-- [ ] You have a clear `FEATURE_REQUEST.md`
+- [ ] You have a clear PRD file in `PDD/PRDs/requests/`
 
 After each implementation, verify:
 
@@ -339,8 +342,8 @@ After each implementation, verify:
 ## 🆘 Need Help?
 
 1. **Review this guide** step by step
-2. **Check examples** in `examples/`
-3. **Consult rules** in `GLOBAL_RULES.md`
+2. **Check PRD examples** in `PDD/PRDs/examples/`
+3. **Consult rules** in `.cursor/rules/core-rules/`
 4. **Use specific prompts** like those in this guide
 
 PDD will make you 10x more productive! 🚀 
