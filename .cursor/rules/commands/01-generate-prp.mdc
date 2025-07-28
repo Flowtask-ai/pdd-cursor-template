@@ -1,0 +1,96 @@
+# Generate PRP Command
+
+## 🎯 Purpose
+When the user requests to generate a PRP (Product Requirements Prompt), follow this structured approach to create a comprehensive implementation blueprint.
+
+## 📋 Process
+
+### 1. Analyze Request
+- **Read the PRD file** completely (usually in `PDD/PRDs/`)
+- **Identify all requirements** (functional, technical, constraints)
+- **Review referenced examples** in `PDD/PRDs/examples/`
+- **Check project patterns** in `.cursor/rules/pattern-examples/`
+
+### 2. Research Context
+- **Search existing codebase** for similar patterns
+- **Consult official documentation** for libraries mentioned
+- **Identify best practices** and common gotchas
+- **Review project architecture** and conventions
+
+### 3. Create PRP Structure
+Use this template structure:
+
+```markdown
+# [Feature Name] - Product Requirements Prompt
+
+## 🎯 Purpose and Context
+- Clear objective description
+- Project context and architecture overview
+- Business justification
+
+## 📋 Technical Requirements
+- Detailed specifications
+- Dependencies and libraries
+- Configuration requirements
+- Performance constraints
+
+## 🏗️ Architecture and Design
+- File structure proposal
+- Design patterns to follow
+- Integration with existing code
+- Data models and relationships
+
+## 📝 Implementation Plan
+1. **Step 1**: [Specific action]
+   - Validation: [Command to run]
+2. **Step 2**: [Specific action]
+   - Validation: [Command to run]
+   [Continue for all steps]
+
+## 🧪 Testing and Validation
+- Unit testing strategy
+- Integration testing approach
+- Acceptance criteria
+- Performance benchmarks
+
+## ✅ Success Criteria
+- [ ] All functionality implemented
+- [ ] All tests passing
+- [ ] Code follows project patterns
+- [ ] Documentation updated
+- [ ] No regressions introduced
+```
+
+## 🔍 Quality Checklist
+- [ ] **Complete context**: All necessary information included
+- [ ] **Clear steps**: Implementation steps are specific and actionable
+- [ ] **Executable validations**: Commands that can be run and verified
+- [ ] **Correct references**: Files and patterns that actually exist
+- [ ] **Measurable criteria**: Success can be objectively verified
+
+## 📊 Confidence Scoring
+Rate the PRP quality (1-10) based on:
+- **Context completeness** (1-3 points): All requirements covered
+- **Implementation clarity** (1-3 points): Steps are clear and specific
+- **Validation quality** (1-2 points): Tests and checks are comprehensive
+- **References accuracy** (1-2 points): All files and patterns exist
+
+## 📤 Output
+- **Save PRP** in `PDD/PRPs/[feature-name].md`
+- **Include confidence score** and justification
+- **Reference the template** in `PDD/PRPs/templates/prp-base.mdc`
+
+## 🎯 Best Practices
+- **Be specific**: Avoid vague descriptions
+- **Include examples**: Reference existing patterns
+- **Anticipate problems**: Address common issues
+- **Validate references**: Ensure all files exist
+- **Follow project conventions**: Use established patterns
+description: Command to generate comprehensive PRPs following PDD methodology
+globs: ["**/PDD/PRDs/**/*.md"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---

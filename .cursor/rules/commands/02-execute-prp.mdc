@@ -1,0 +1,147 @@
+# Execute PRP Command
+
+## 🎯 Purpose
+When the user requests to execute a PRP (Product Requirements Prompt), follow this systematic approach to implement the feature with automatic validation and error correction.
+
+## 📋 Process
+
+### 1. Analyze PRP
+- **Read the PRP file** completely (usually in `PDD/PRPs/`)
+- **Understand the context** and objectives
+- **Identify all requirements** (technical, functional, constraints)
+- **Review the implementation plan** step by step
+
+### 2. Plan Implementation
+- **Create detailed plan** based on PRP steps
+- **Identify dependencies** between components
+- **Plan implementation order** to minimize conflicts
+- **Anticipate potential issues** and solutions
+
+### 3. Execute Iteratively
+- **Implement each component** step by step
+- **Run validations** after each significant change
+- **Fix errors automatically** when possible
+- **Document important decisions** and changes
+
+### 4. Validate Continuously
+- **Execute all validations** specified in the PRP
+- **Verify success criteria** one by one
+- **Fix issues found** during validation
+- **Iterate until everything works** correctly
+
+## 🔧 Implementation Strategy
+
+### Modular Approach
+- **Implement components** independently
+- **Validate each component** before continuing
+- **Maintain compatibility** with existing code
+- **Follow established patterns** from the project
+
+### Error Handling
+- **Capture specific errors** and provide solutions
+- **Implement detailed logging** for debugging
+- **Provide clear error messages** to the user
+- **Maintain rollback capability** if necessary
+
+### Automatic Validation
+- **Run tests** after each significant change
+- **Verify syntax** and code style
+- **Check integration** with existing components
+- **Validate functionality** according to criteria
+
+## 🧪 Testing and Validation
+
+### Testing Strategy
+- **Create unit tests** for each component
+- **Implement integration tests** for complex components
+- **Include edge case tests** and error handling
+- **Maintain code coverage** according to project standards
+
+### Validation Commands
+```bash
+# Syntax and style
+ruff check --fix && mypy .
+
+# Unit tests
+pytest tests/ -v
+
+# Coverage
+pytest --cov=src --cov-report=html
+
+# PRP-specific validations
+# [Commands specified in the PRP]
+```
+
+### Acceptance Criteria
+- [ ] **Functionality meets** specified requirements
+- [ ] **Code passes** all automatic validations
+- [ ] **Documentation is** updated
+- [ ] **No regressions** in existing functionality
+
+## 🔄 Iteration and Improvement
+
+### Refinement Process
+- **Identify problems** during implementation
+- **Propose improvements** based on findings
+- **Iterate on implementation** until correct
+- **Optimize code** as necessary
+
+### Error Correction
+- **Analyze validation errors** systematically
+- **Implement specific fixes** for each issue
+- **Verify fixes resolve** the problem
+- **Run validations again** to confirm
+
+## 📊 Progress Monitoring
+
+### Task Tracking
+- **Mark completed steps** according to the PRP
+- **Record time spent** on each component
+- **Document blockers** and solutions found
+- **Update project status** regularly
+
+### Quality Metrics
+- **Code coverage** achieved
+- **Tests passing** successfully
+- **Automatic validations** successful
+- **Success criteria** met
+
+## 🎯 Best Practices
+
+### Implementation
+- **Follow the PRP plan** strictly
+- **Maintain consistency** with project patterns
+- **Implement incrementally** and validate each step
+- **Document important changes**
+
+### Communication
+- **Provide regular updates** on progress
+- **Explain implementation decisions**
+- **Request clarifications** when needed
+- **Report issues** encountered
+
+### Quality
+- **Maintain project standards** for code quality
+- **Implement robust error handling**
+- **Include appropriate logging**
+- **Optimize performance** when necessary
+
+## 📤 Final Report
+
+### Summary
+- **Successfully implemented** components
+- **Issues encountered** and solutions applied
+- **Improvements made** during implementation
+
+### Final Status
+- **All success criteria** met
+- **Automatic validations** passing
+- **Code ready** for production
+description: Command to execute PRPs with systematic implementation and validation
+globs: ["**/PDD/PRPs/**/*.md"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---

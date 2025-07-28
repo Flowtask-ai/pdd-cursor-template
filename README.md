@@ -335,8 +335,8 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 
 **Workflow**:
 1. **Create PRD**: Use `PDD/PRDs/templates/new-bc-XXX.md` to define your project
-2. **Generate PRP**: Use `PDD/PRPs/commands/generate-prp.md` to create implementation plan
-3. **Execute Foundation**: Use `PDD/PRPs/commands/execute-prp.md` to build the system
+2. **Generate PRP**: Use "Generate a PRP for [description]" to create implementation plan
+3. **Execute Foundation**: Use "Execute the PRP in [file]" to build the system
 4. **Iterate**: Add features incrementally using the same methodology
 
 **Example**: *"Create a complete e-commerce platform with React frontend, FastAPI backend, PostgreSQL database, and payment integration"*
@@ -350,8 +350,8 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 
 **Workflow**:
 1. **Create PRD**: Use `PDD/PRDs/templates/new-feature-YYY-bc-XXX.md` for specific functionality
-2. **Generate Feature PRP**: Create focused implementation plan
-3. **Execute with Validation**: Implement ensuring no breaking changes
+2. **Generate Feature PRP**: Use "Generate a PRP for [feature description]"
+3. **Execute with Validation**: Use "Execute the PRP in [file]" ensuring no breaking changes
 4. **Integrate**: Connect with existing systems and validate
 
 **Example**: *"Add push notifications to existing user management system"*
@@ -365,8 +365,8 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 
 **Workflow**:
 1. **Create PRD**: Use `PDD/PRDs/templates/improve-bc-XXX.md` to define improvements
-2. **Generate Improvement Plan**: Create refactoring PRP with specific goals
-3. **Execute Incrementally**: Apply improvements step by step
+2. **Generate Improvement Plan**: Use "Generate a PRP for [improvement description]"
+3. **Execute Incrementally**: Use "Execute the PRP in [file]" step by step
 4. **Validate Continuously**: Ensure no regressions during improvements
 5. **Document Changes**: Update documentation and examples
 
