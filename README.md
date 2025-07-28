@@ -326,22 +326,78 @@ Our **role-based development system** is conceptually inspired by the Subagents 
 
 ## 🚀 Use Cases
 
-### New Project
-1. Initial setup
-2. Define initial feature
-3. Generate complete PRP
-4. Execute implementation
+PDD adapts to different project scenarios and complexity levels. Choose the approach that matches your current situation:
 
-### Existing Project
-1. Automatic code analysis
-2. Generate refactoring plan
-3. Execute incremental improvements
-4. Automatic validation
+### 🏗️ **New Bounded Context** (Complete Project)
+**When**: Starting a completely new project with frontend and backend
+**Complexity**: High - Full system architecture
+**Scope**: Complete application with multiple features
 
-### Feature Extension
-1. Define new feature
-2. Generate specialized PRP
-3. Implementation with automatic validation
+**Workflow**:
+1. **Create PRD**: Use `PRDs/templates/new-bc-XXX.md` to define your project
+2. **Generate PRP**: Use `PRPs/commands/generate-prp.md` to create implementation plan
+3. **Execute Foundation**: Use `PRPs/commands/execute-prp.md` to build the system
+4. **Iterate**: Add features incrementally using the same methodology
+
+**Example**: *"Create a complete e-commerce platform with React frontend, FastAPI backend, PostgreSQL database, and payment integration"*
+
+---
+
+### ✨ **New Feature** (Existing Bounded Context)
+**When**: Adding new functionality to an existing, well-structured project
+**Complexity**: Medium - Feature-specific implementation
+**Scope**: Single feature or module within existing architecture
+
+**Workflow**:
+1. **Create PRD**: Use `PRDs/templates/new-feature-YYY-bc-XXX.md` for specific functionality
+2. **Generate Feature PRP**: Create focused implementation plan
+3. **Execute with Validation**: Implement ensuring no breaking changes
+4. **Integrate**: Connect with existing systems and validate
+
+**Example**: *"Add push notifications to existing user management system"*
+
+---
+
+### 🔧 **Improve Existing Bounded Context** (Refactoring)
+**When**: Enhancing quality, performance, or maintainability of existing project
+**Complexity**: Variable - Based on improvement scope
+**Scope**: Code quality, architecture improvements, technical debt
+
+**Workflow**:
+1. **Create PRD**: Use `PRDs/templates/improve-bc-XXX.md` to define improvements
+2. **Generate Improvement Plan**: Create refactoring PRP with specific goals
+3. **Execute Incrementally**: Apply improvements step by step
+4. **Validate Continuously**: Ensure no regressions during improvements
+5. **Document Changes**: Update documentation and examples
+
+**Example**: *"Refactor authentication system to use modern JWT patterns and improve security"*
+
+---
+
+### 🎯 **Choose Your Path**
+
+| Scenario | Template File | AI Approach | Expected Outcome |
+|----------|---------------|-------------|------------------|
+| **New BC** | `PRDs/templates/new-bc-XXX.md` | Architect + Developer roles | Complete project foundation |
+| **New Feature** | `PRDs/templates/new-feature-YYY-bc-XXX.md` | Developer role | Integrated feature |
+| **Improve BC** | `PRDs/templates/improve-bc-XXX.md` | Architect + Developer roles | Enhanced codebase |
+
+### 💡 **Pro Tips for Each Use Case**
+
+#### **For New Bounded Context**:
+- Start with MVP features first
+- Use `examples/` to establish patterns early
+- Focus on architecture before implementation details
+
+#### **For New Features**:
+- Reference existing `examples/` for consistency
+- Ensure integration with current patterns
+- Validate against existing test suite
+
+#### **For Improvements**:
+- Document current state before changes
+- Use incremental approach to avoid breaking changes
+- Update `examples/` with new best practices
 
 ## 📚 Resources
 

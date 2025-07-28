@@ -21,8 +21,6 @@ pdd-cursor-template/
 ├── 📄 README.md                    # Main documentation and overview
 ├── 📄 USAGE_GUIDE.md              # This guide - step-by-step instructions
 ├── 📄 GLOBAL_RULES.md             # Human-readable project rules and conventions
-├── 📄 FEATURE_REQUEST.md          # Template for defining new features
-├── 📄 FEATURE_REQUEST_EXAMPLE.md  # Example of a completed feature request
 ├── 📄 LICENSE                     # MIT License (Flowtask-ai + Cole Medin attribution)
 ├── 📄 package.json                # Project metadata and dependencies
 │
@@ -38,15 +36,25 @@ pdd-cursor-template/
 │       └── 📁 templates/                 # AI templates
 │           └── 📄 prp-base.mdc           # Base template for PRP generation
 │
-├── 📁 prompts/                    # Predefined prompts for manual execution
-│   ├── 📄 generate-prp.md         # Prompt to generate a PRP
-│   └── 📄 execute-prp.md          # Prompt to execute a PRP
+├── 📁 PRDs/                       # Product Requirements Documents
+│   ├── 📁 templates/              # Templates for each use case
+│   │   ├── 📄 new-bc-XXX.md       # Template for new bounded contexts
+│   │   ├── 📄 new-feature-YYY-bc-XXX.md  # Template for new features
+│   │   └── 📄 improve-bc-XXX.md   # Template for BC improvements
+│   ├── 📁 examples/               # Filled examples for inspiration
+│   │   ├── 📄 new-bc-ecommerce.md # Example: Complete e-commerce project
+│   │   ├── 📄 new-feature-notifications-bc-auth.md  # Example: Notifications feature
+│   │   └── 📄 improve-bc-auth.md  # Example: Auth system improvements
+│   └── (Your PRDs will appear here)
+│
+├── 📁 PRPs/                       # Product Requirements Prompts (generated)
+│   ├── 📁 commands/               # Commands for generate/execute PRPs
+│   │   ├── 📄 generate-prp.md     # Prompt to generate a PRP
+│   │   └── 📄 execute-prp.md      # Prompt to execute a PRP
+│   └── (Your generated PRPs will appear here)
 │
 ├── 📁 examples/                   # Code examples and patterns
 │   └── 📄 README.md               # Guide for organizing examples
-│
-├── 📁 PRPs/                       # Generated Product Requirements Prompts
-│   └── (Your generated PRPs will appear here)
 │
 └── 📁 .github/                    # GitHub configuration
     └── 📁 ISSUE_TEMPLATE/         # Issue templates for contributions
@@ -62,13 +70,13 @@ pdd-cursor-template/
 - **`GLOBAL_RULES.md`**: Human-readable rules that mirror the AI rules
 
 #### **📄 Templates & Examples**
-- **`FEATURE_REQUEST.md`**: Template to describe new features you want to implement
-- **`FEATURE_REQUEST_EXAMPLE.md`**: Real example showing how to fill the template
+- **`PRDs/templates/`**: Templates for each use case (new BC, new feature, improve BC)
+- **`PRDs/examples/`**: Filled examples for inspiration and reference
 - **`examples/`**: Your code patterns and reference implementations
 
 #### **🤖 AI Configuration**
 - **`.cursor/rules/`**: Automatic context for Cursor's AI (always active)
-- **`prompts/`**: Manual prompts you can copy-paste to trigger specific actions
+- **`PRPs/commands/`**: Manual prompts you can copy-paste to trigger specific actions
 - **`PRPs/`**: Where generated Product Requirements Prompts are stored
 
 #### **⚙️ Project Configuration**
@@ -79,9 +87,9 @@ pdd-cursor-template/
 ### 🎯 How It All Works Together:
 
 1. **Setup**: Configure `GLOBAL_RULES.md` and add examples to `examples/`
-2. **Request**: Fill `FEATURE_REQUEST.md` with your feature description
-3. **Generate**: Use prompts from `prompts/` to generate a PRP in `PRPs/`
-4. **Execute**: Use prompts to execute the PRP following all rules and validations
+2. **Create PRD**: Choose appropriate template from `PRDs/templates/` and fill it out
+3. **Generate PRP**: Use `PRPs/commands/generate-prp.md` to create implementation plan
+4. **Execute**: Use `PRPs/commands/execute-prp.md` to implement following all rules and validations
 5. **Validate**: AI automatically runs tests and fixes issues based on rules
 
 ---
@@ -137,42 +145,42 @@ examples/
 
 ### Scenario: Create a User Management System
 
-#### Step 1: Create Feature Request
+#### Step 1: Create PRD
 
-Edit `FEATURE_REQUEST.md`:
+Copy and edit `PRDs/templates/new-bc-XXX.md`:
 
 ```markdown
-## 🎯 FEATURE
+# New Bounded Context: User Management System
 
-Create a user management system with JWT authentication, user roles, and complete REST API.
+## 🎯 Project Overview
+**BC Name**: User Management System
+**Purpose**: Create a complete user management system with authentication, authorization, and user administration
+**Scope**: Complete project with frontend and backend
 
-### Specific functionalities:
-- User registration with email validation
-- Login with JWT tokens
-- Roles: admin, user, guest
-- Complete CRUD for users
-- Authentication middleware
-- Unit and integration tests
+## 🏗️ Architecture Requirements
+**Frontend**: React 18 with TypeScript
+**Backend**: FastAPI with Python 3.11+
+**Database**: PostgreSQL 15 with SQLAlchemy 2.0
+**Infrastructure**: Docker containers
 
-## 📚 EXAMPLES
+## ✨ Core Features
+1. **User Authentication**: Registration, login, password reset with JWT tokens
+2. **User Management**: Complete CRUD operations for users
+3. **Role Management**: Admin, user, guest roles with permissions
+4. **Security**: JWT authentication, password hashing, rate limiting
 
-- `examples/api/fastapi_basic/` - Basic FastAPI structure
-- `examples/database/sqlalchemy_models/` - Model patterns
-- `examples/testing/unit_tests/` - Testing patterns
-
-## 📖 DOCUMENTATION
-
-- FastAPI: https://fastapi.tiangolo.com/
-- SQLAlchemy: https://docs.sqlalchemy.org/
-- JWT: https://pyjwt.readthedocs.io/
+## 📚 Examples to Follow
+- `examples/api/fastapi_basic/` - Backend patterns
+- `examples/auth/jwt_authentication/` - Authentication patterns
+- `examples/database/sqlalchemy_models/` - Data modeling patterns
 ```
 
 #### Step 2: Generate PRP
 
-In Cursor, use this prompt:
+Use the command from `PRPs/commands/generate-prp.md`:
 
 ```
-Generate a PRP following the project rules, taking as reference FEATURE_REQUEST.md and examples in examples/. The PRP should include:
+Generate a PRP following the project rules, taking as reference PRDs/new-bc-user-management.md and examples in examples/. The PRP should include:
 
 1. System architecture
 2. File structure
@@ -183,59 +191,59 @@ Generate a PRP following the project rules, taking as reference FEATURE_REQUEST.
 
 #### Step 3: Execute Implementation
 
-Once the PRP is generated in `PRPs/user-system.md`, use:
+Use the command from `PRPs/commands/execute-prp.md`:
 
 ```
-Execute the PRP in PRPs/user-system.md following all validations and project rules. Make sure all tests pass.
+Execute the PRP in PRPs/user-management-system.md following all validations and project rules. Make sure all tests pass.
 ```
 
 ---
 
 ## 🎯 Specific Use Cases
 
-### Case 1: New Project from Scratch
+### Case 1: New Bounded Context (Complete Project)
 
-**Situation**: You want to create a new project from scratch.
+**Situation**: You want to create a completely new project with frontend and backend.
 
 **Steps**:
 1. **Configure rules**: Edit `GLOBAL_RULES.md` with your tech stack
 2. **Add examples**: Create basic examples in `examples/`
-3. **Define MVP**: Use `FEATURE_REQUEST.md` to describe the first feature
-4. **Generate PRP**: "Generate a PRP for the MVP following the rules"
-5. **Execute**: "Execute the complete PRP"
+3. **Create PRD**: Copy `PRDs/templates/new-bc-XXX.md` and fill it out
+4. **Generate PRP**: Use `PRPs/commands/generate-prp.md` to create implementation plan
+5. **Execute**: Use `PRPs/commands/execute-prp.md` to build the system
 
 **Example prompt**:
 ```
-Generate a PRP to create an MVP of a task application with FastAPI, PostgreSQL and React. Include basic authentication and task CRUD.
+Generate a PRP to create a complete task management application with FastAPI backend, React frontend, PostgreSQL database, and JWT authentication. Include user management, task CRUD, and real-time updates.
 ```
 
-### Case 2: Refactor Existing Project
+### Case 2: Improve Existing Bounded Context (Refactoring)
 
-**Situation**: You have a project that needs improvements.
+**Situation**: You have a project that needs improvements in quality, performance, or architecture.
 
 **Steps**:
 1. **Analyze code**: "Analyze existing code and generate a refactoring plan"
-2. **Create request**: Use `FEATURE_REQUEST.md` to describe improvements
+2. **Create PRD**: Use `PRDs/templates/improve-bc-XXX.md` to describe improvements
 3. **Generate PRP**: "Generate a PRP to refactor following best practices"
 4. **Execute incrementally**: "Execute the PRP step by step, validating each change"
 
 **Example prompt**:
 ```
-Analyze the current code and generate a PRP to refactor the architecture, add tests, and improve documentation following the project rules.
+Analyze the current authentication system and generate a PRP to improve security, performance, and code quality following the project rules.
 ```
 
-### Case 3: Add New Functionality
+### Case 3: New Feature (Existing Bounded Context)
 
-**Situation**: Well-structured project, add new feature.
+**Situation**: Well-structured project, add new feature to existing bounded context.
 
 **Steps**:
-1. **Define feature**: Use `FEATURE_REQUEST.md` for the new functionality
+1. **Define feature**: Use `PRDs/templates/new-feature-YYY-bc-XXX.md` for the new functionality
 2. **Generate specific PRP**: "Generate a PRP for this specific feature"
 3. **Execute with validation**: "Execute the PRP ensuring it doesn't break existing functionality"
 
 **Example prompt**:
 ```
-Generate a PRP to add a push notification system to the existing project, integrating with Firebase and maintaining the current architecture.
+Generate a PRP to add a push notification system to the existing authentication bounded context, integrating with Firebase and maintaining the current architecture.
 ```
 
 ---

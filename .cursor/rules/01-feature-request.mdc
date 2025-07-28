@@ -1,78 +1,90 @@
-# Guía para Solicitudes de Características
+# Guide for Product Requirements Documents (PRDs)
 
-## 🎯 Estructura de FEATURE_REQUEST.md
+## 🎯 PRD Structure and Templates
 
-Cuando trabajes con solicitudes de características, sigue esta estructura:
+When working with Product Requirements Documents, use the appropriate template based on the use case:
 
-### Sección CARACTERÍSTICA
-- **Sé específico y detallado** sobre la funcionalidad requerida
-- **Incluye requisitos técnicos** específicos
-- **Define el comportamiento esperado** claramente
-- **Evita descripciones vagas** como "crear un scraper"
+### 📁 Available Templates
+- **`PRDs/templates/new-bc-XXX.md`**: For new bounded contexts (complete projects)
+- **`PRDs/templates/new-feature-YYY-bc-XXX.md`**: For new features in existing BCs
+- **`PRDs/templates/improve-bc-XXX.md`**: For improving existing BCs
 
-### Sección EJEMPLOS
-- **Referencia ejemplos existentes** en la carpeta `examples/`
-- **Explica cómo usar los ejemplos** como inspiración, no para copiar directamente
-- **Identifica patrones específicos** a seguir
+### 📚 Examples for Reference
+- **`PRDs/examples/new-bc-ecommerce.md`**: Complete e-commerce project example
+- **`PRDs/examples/new-feature-notifications-bc-auth.md`**: Notifications feature example
+- **`PRDs/examples/improve-bc-auth.md`**: Auth system improvements example
 
-### Sección DOCUMENTACIÓN
-- **Incluye URLs de documentación oficial** de APIs y librerías
-- **Agrega recursos adicionales** como GitHub repos, Stack Overflow posts
-- **Especifica versiones** de librerías si es relevante
+### 📋 PRD Sections to Complete
 
-### Sección OTRAS CONSIDERACIONES
-- **Lista requisitos técnicos** específicos (rate limits, autenticación, etc.)
-- **Incluye consideraciones de seguridad** relevantes
-- **Menciona requisitos de UX** si aplica
-- **Documenta gotchas conocidas** que los asistentes de IA suelen olvidar
+#### **Project Overview Section**
+- **Be specific and detailed** about the project/feature purpose
+- **Include technical requirements** and constraints
+- **Define expected behavior** clearly
+- **Avoid vague descriptions** like "create a scraper"
 
-### Sección CRITERIOS DE ÉXITO
-- **Define métricas específicas** de funcionalidad
-- **Incluye criterios de calidad** (tests, documentación, etc.)
-- **Especifica métricas de rendimiento** si aplica
+#### **Examples Section**
+- **Reference existing examples** in the `examples/` folder
+- **Explain how to use examples** as inspiration, not for direct copying
+- **Identify specific patterns** to follow
 
-## 🔍 Análisis de Solicitudes
+#### **Documentation Section**
+- **Include official documentation URLs** for APIs and libraries
+- **Add additional resources** like GitHub repos, Stack Overflow posts
+- **Specify versions** of libraries if relevant
 
-### Preguntas Clave a Considerar
-1. **¿Es la descripción suficientemente específica?**
-2. **¿Se han incluido todos los ejemplos relevantes?**
-3. **¿Está la documentación completa y actualizada?**
-4. **¿Se han considerado todos los edge cases?**
-5. **¿Son los criterios de éxito medibles?**
+#### **Technical Considerations**
+- **List specific technical requirements** (rate limits, authentication, etc.)
+- **Include security considerations** where relevant
+- **Mention UX requirements** if applicable
+- **Document known gotchas** that AI assistants often forget
 
-### Validación de Solicitudes
-- **Verifica que la característica sea factible** con las tecnologías disponibles
-- **Confirma que los ejemplos referenciados** existen en el proyecto
-- **Asegúrate de que la documentación** esté accesible y actualizada
-- **Valida que los criterios de éxito** sean alcanzables
+#### **Success Criteria Section**
+- **Define specific functionality metrics**
+- **Include quality criteria** (tests, documentation, etc.)
+- **Specify performance metrics** if applicable
 
-## 📋 Proceso de Refinamiento
+## 🔍 PRD Analysis
 
-### Mejoras Sugeridas
-- **Agregar más detalles** si la descripción es vaga
-- **Incluir ejemplos adicionales** si faltan patrones relevantes
-- **Expandir documentación** si hay gaps en la información
-- **Clarificar criterios de éxito** si no son específicos
+### Key Questions to Consider
+1. **Is the description sufficiently specific?**
+2. **Have all relevant examples been included?**
+3. **Is the documentation complete and up-to-date?**
+4. **Have all edge cases been considered?**
+5. **Are the success criteria measurable?**
 
-### Preguntas de Aclaración
-- **¿Hay restricciones de tiempo** o recursos?
-- **¿Existen dependencias** con otras características?
-- **¿Hay requisitos de compatibilidad** específicos?
-- **¿Se requiere integración** con sistemas existentes?
+### PRD Validation
+- **Verify that the project/feature is feasible** with available technologies
+- **Confirm that referenced examples** exist in the project
+- **Ensure that documentation** is accessible and up-to-date
+- **Validate that success criteria** are achievable
 
-## 🎯 Mejores Prácticas
+## 📋 Refinement Process
 
-### Escritura de Solicitudes
-- **Usa lenguaje técnico preciso** pero comprensible
-- **Proporciona contexto suficiente** para entender el problema
-- **Incluye ejemplos de uso** cuando sea posible
-- **Especifica restricciones** y limitaciones claramente
+### Suggested Improvements
+- **Add more details** if the description is vague
+- **Include additional examples** if relevant patterns are missing
+- **Expand documentation** if there are information gaps
+- **Clarify success criteria** if they are not specific
 
-### Organización de Información
-- **Agrupa información relacionada** en secciones lógicas
-- **Usa listas y tablas** para información estructurada
-- **Incluye enlaces directos** a recursos externos
-- **Mantén un formato consistente** con el resto del proyecto
+### Clarification Questions
+- **Are there time or resource constraints?**
+- **Are there dependencies** with other features?
+- **Are there specific compatibility requirements?**
+- **Is integration required** with existing systems?
+
+## 🎯 Best Practices
+
+### Writing PRDs
+- **Use precise technical language** but understandable
+- **Provide sufficient context** to understand the problem
+- **Include usage examples** when possible
+- **Specify constraints** and limitations clearly
+
+### Information Organization
+- **Group related information** in logical sections
+- **Use lists and tables** for structured information
+- **Include direct links** to external resources
+- **Maintain consistent formatting** with the rest of the project
 description:
 globs:
 alwaysApply: false
