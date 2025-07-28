@@ -1,0 +1,123 @@
+# Quality Assurance Rules
+
+## 🔍 Code Quality Standards
+
+### Code Style and Formatting
+- Use consistent code formatting (Prettier, Black, etc.)
+- Follow language-specific style guides
+- Use proper indentation and spacing
+- Maintain consistent naming conventions
+- Use proper line length limits
+
+### Code Review Process
+- Require code reviews for all changes
+- Use pull request templates
+- Implement proper review guidelines
+- Use automated quality checks
+- Maintain review documentation
+
+### Static Code Analysis
+- Use linters for code quality (ESLint, Pylint, SonarQube)
+- Implement proper linting rules
+- Use type checkers (TypeScript, mypy)
+- Monitor code complexity metrics
+- Use security scanning tools
+
+## 📊 Quality Metrics
+
+### Code Coverage
+- Maintain >80% code coverage
+- Focus on critical business logic
+- Use coverage reports for guidance
+- Implement coverage thresholds
+- Monitor coverage trends
+
+### Performance Metrics
+- Monitor application performance
+- Use performance profiling tools
+- Implement performance budgets
+- Monitor memory usage
+- Track response times
+
+### Security Metrics
+- Regular security audits
+- Vulnerability scanning
+- Dependency vulnerability checks
+- Security code reviews
+- Penetration testing
+
+## 🛠️ Quality Tools
+
+### Linting and Formatting
+- **ESLint**: JavaScript/TypeScript linting
+- **Prettier**: Code formatting
+- **Black**: Python code formatting
+- **SonarQube**: Code quality analysis
+- **CodeClimate**: Code quality monitoring
+
+### Security Tools
+- **OWASP ZAP**: Security testing
+- **Snyk**: Dependency vulnerability scanning
+- **Bandit**: Python security linting
+- **ESLint Security**: JavaScript security rules
+- **npm audit**: Node.js security checks
+
+### Performance Tools
+- **Lighthouse**: Web performance auditing
+- **WebPageTest**: Performance testing
+- **JMeter**: Load testing
+- **New Relic**: Application monitoring
+- **DataDog**: Infrastructure monitoring
+
+## 📋 Quality Processes
+
+### Definition of Done
+- Code reviewed and approved
+- All tests passing
+- Code coverage requirements met
+- Documentation updated
+- Security checks passed
+
+### Quality Gates
+- Automated tests must pass
+- Code coverage thresholds met
+- No critical security vulnerabilities
+- Performance benchmarks met
+- Code quality scores acceptable
+
+### Continuous Monitoring
+- Monitor application health
+- Track error rates and performance
+- Monitor user experience metrics
+- Track business metrics
+- Implement alerting systems
+
+## 🚀 Quality Automation
+
+### CI/CD Integration
+- Automated quality checks in pipeline
+- Quality gates for deployment
+- Automated testing and coverage
+- Security scanning automation
+- Performance testing automation
+
+### Quality Reporting
+- Regular quality reports
+- Trend analysis and monitoring
+- Quality metrics dashboards
+- Stakeholder communication
+- Continuous improvement tracking
+
+## 📚 References
+- Clean Code by Robert C. Martin
+- Code Complete by Steve McConnell
+- The Pragmatic Programmer by Andrew Hunt and David Thomas
+- SonarQube Documentation: https://docs.sonarqube.org/
+description: Quality assurance and code quality standards for PDD projects
+globs: ["**/*"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---

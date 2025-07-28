@@ -1,0 +1,101 @@
+# Backend Development Rules
+
+## 🏗️ Framework Guidelines
+
+### FastAPI (Python)
+- Use Pydantic models for request/response validation
+- Implement proper error handling with HTTPException
+- Use dependency injection for services and repositories
+- Follow RESTful API design principles
+- Implement proper logging and monitoring
+
+### NestJS (TypeScript/Node.js)
+- Use decorators for dependency injection
+- Implement proper module structure
+- Use DTOs for data transfer objects
+- Follow SOLID principles in service design
+- Implement proper exception filters
+
+### Spring Boot (Java)
+- Use Spring Data JPA for data access
+- Implement proper service layer architecture
+- Use Spring Security for authentication/authorization
+- Follow Spring Boot best practices
+- Implement proper exception handling
+
+## 🗄️ Database Patterns
+
+### Data Access Layer
+- Use repository pattern for data access
+- Implement proper transaction management
+- Use connection pooling for performance
+- Implement proper indexing strategies
+- Use migrations for schema changes
+
+### ORM Best Practices
+- Use lazy loading appropriately
+- Implement proper relationship mapping
+- Use query optimization techniques
+- Implement proper caching strategies
+- Use database constraints for data integrity
+
+## 🔐 Security Guidelines
+
+### Authentication
+- Implement JWT tokens with proper expiration
+- Use secure password hashing (bcrypt, Argon2)
+- Implement refresh token rotation
+- Use HTTPS for all communications
+- Implement proper session management
+
+### Authorization
+- Use role-based access control (RBAC)
+- Implement proper permission checks
+- Use principle of least privilege
+- Implement proper audit logging
+- Use secure headers and CORS policies
+
+## 📊 API Design
+
+### RESTful Principles
+- Use proper HTTP methods (GET, POST, PUT, DELETE)
+- Implement proper status codes
+- Use consistent URL naming conventions
+- Implement proper pagination
+- Use proper content negotiation
+
+### Error Handling
+- Return consistent error responses
+- Use proper HTTP status codes
+- Include meaningful error messages
+- Implement proper validation errors
+- Use proper logging for debugging
+
+## 🧪 Testing Strategy
+
+### Unit Testing
+- Test business logic in isolation
+- Use mocking for external dependencies
+- Achieve high code coverage
+- Test edge cases and error conditions
+- Use proper test naming conventions
+
+### Integration Testing
+- Test API endpoints end-to-end
+- Use test databases for data persistence
+- Test authentication and authorization
+- Implement proper test data setup
+- Use proper test cleanup
+
+## 📚 References
+- FastAPI Documentation: https://fastapi.tiangolo.com/
+- NestJS Documentation: https://nestjs.com/
+- Spring Boot Documentation: https://spring.io/projects/spring-boot
+description: Backend development guidelines for PDD projects
+globs: ["**/*.py", "**/*.ts", "**/*.js", "**/*.java", "**/*.cs"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---

@@ -1,0 +1,181 @@
+# Testing Patterns and Examples
+
+## 🧪 Unit Testing Patterns
+
+### Arrange-Act-Assert Pattern
+```typescript
+// Jest Unit Test Example
+describe('UserService', () => {
+  describe('createUser', () => {
+    it('should create a new user successfully', async () => {
+      // Arrange
+      const userData = { email: 'test@example.com', password: 'password123' };
+      const mockRepository = { save: jest.fn() };
+      const mockHasher = { hash: jest.fn().mockResolvedValue('hashedPassword') };
+      const service = new UserService(mockRepository, mockHasher);
+
+      // Act
+      const result = await service.createUser(userData);
+
+      // Assert
+      expect(mockRepository.save).toHaveBeenCalledWith(
+        expect.objectContaining({
+          email: 'test@example.com',
+          password: 'hashedPassword'
+        })
+      );
+      expect(result).toBeDefined();
+    });
+  });
+});
+```
+
+### Mocking Patterns
+```typescript
+// Mocking External Dependencies
+describe('UserController', () => {
+  let mockUserService: jest.Mocked<UserService>;
+  let controller: UserController;
+
+  beforeEach(() => {
+    mockUserService = {
+      createUser: jest.fn(),
+      getUser: jest.fn(),
+      updateUser: jest.fn()
+    } as any;
+    controller = new UserController(mockUserService);
+  });
+
+  it('should return 201 when user is created', async () => {
+    // Arrange
+    const userData = { email: 'test@example.com', password: 'password123' };
+    const createdUser = { id: '1', email: 'test@example.com' };
+    mockUserService.createUser.mockResolvedValue(createdUser);
+
+    // Act
+    const result = await controller.createUser(userData);
+
+    // Assert
+    expect(result.status).toBe(201);
+    expect(result.data).toEqual(createdUser);
+  });
+});
+```
+
+## 🔄 Integration Testing Patterns
+
+### API Integration Tests
+```typescript
+// FastAPI Integration Test
+class TestUserAPI:
+    def test_create_user(self, client):
+        # Arrange
+        user_data = {
+            "email": "test@example.com",
+            "password": "password123",
+            "first_name": "John",
+            "last_name": "Doe"
+        }
+
+        # Act
+        response = client.post("/users", json=user_data)
+
+        # Assert
+        assert response.status_code == 201
+        assert response.json()["email"] == user_data["email"]
+        assert "id" in response.json()
+```
+
+### Database Integration Tests
+```typescript
+// Database Integration Test
+describe('UserRepository Integration', () => {
+  let repository: UserRepository;
+  let database: Database;
+
+  beforeAll(async () => {
+    database = await createTestDatabase();
+    repository = new SqlUserRepository(database);
+  });
+
+  afterAll(async () => {
+    await database.close();
+  });
+
+  beforeEach(async () => {
+    await database.query('DELETE FROM users');
+  });
+
+  it('should save and retrieve user', async () => {
+    // Arrange
+    const user = new User(new UserId(), new Email('test@example.com'), new PasswordHash('hash'));
+
+    // Act
+    await repository.save(user);
+    const retrievedUser = await repository.findById(user.id);
+
+    // Assert
+    expect(retrievedUser).toBeDefined();
+    expect(retrievedUser.email.toString()).toBe('test@example.com');
+  });
+});
+```
+
+## 🌐 E2E Testing Patterns
+
+### Playwright E2E Test
+```typescript
+// Playwright E2E Test
+test('user registration flow', async ({ page }) => {
+  // Arrange
+  await page.goto('/register');
+
+  // Act
+  await page.fill('[data-testid="email"]', 'test@example.com');
+  await page.fill('[data-testid="password"]', 'password123');
+  await page.fill('[data-testid="confirm-password"]', 'password123');
+  await page.click('[data-testid="register-button"]');
+
+  // Assert
+  await expect(page).toHaveURL('/dashboard');
+  await expect(page.locator('[data-testid="welcome-message"]')).toContainText('Welcome');
+});
+```
+
+## 📊 Test Data Patterns
+
+### Factory Pattern
+```typescript
+// Test Data Factory
+class UserFactory {
+  static createUser(overrides: Partial<UserData> = {}): UserData {
+    return {
+      id: generateId(),
+      email: 'test@example.com',
+      password: 'password123',
+      firstName: 'John',
+      lastName: 'Doe',
+      ...overrides
+    };
+  }
+
+  static createUserList(count: number): UserData[] {
+    return Array.from({ length: count }, (_, i) => 
+      this.createUser({ email: `user${i}@example.com` })
+    );
+  }
+}
+```
+
+## 📚 References
+- Testing Library: https://testing-library.com/
+- Jest Documentation: https://jestjs.io/
+- Playwright Documentation: https://playwright.dev/
+description: Testing patterns and examples for PDD projects
+globs: ["**/*.test.*", "**/*.spec.*", "**/tests/**", "**/test/**"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---

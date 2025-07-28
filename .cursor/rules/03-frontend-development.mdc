@@ -1,0 +1,102 @@
+# Frontend Development Rules
+
+## 🏗️ Framework Guidelines
+
+### React
+- Use functional components with hooks
+- Implement proper state management (Context, Redux, Zustand)
+- Use TypeScript for type safety
+- Follow component composition patterns
+- Implement proper error boundaries
+
+### Vue.js
+- Use Composition API for complex components
+- Implement proper state management (Pinia, Vuex)
+- Use TypeScript for type safety
+- Follow Vue.js best practices
+- Implement proper error handling
+
+### Angular
+- Use Angular CLI for project structure
+- Implement proper module and component architecture
+- Use Angular services for state management
+- Follow Angular style guide
+- Implement proper routing and guards
+
+## 🎨 UI/UX Patterns
+
+### Component Design
+- Create reusable, composable components
+- Use proper prop interfaces and validation
+- Implement proper accessibility (ARIA labels, semantic HTML)
+- Use consistent design tokens and theming
+- Implement responsive design principles
+
+### State Management
+- Use appropriate state management for complexity level
+- Implement proper data flow patterns
+- Use optimistic updates where appropriate
+- Implement proper error state handling
+- Use proper loading states and skeletons
+
+## 🔧 Development Practices
+
+### Code Organization
+- Use feature-based folder structure
+- Implement proper separation of concerns
+- Use consistent naming conventions
+- Implement proper lazy loading
+- Use proper code splitting strategies
+
+### Performance Optimization
+- Implement proper memoization (React.memo, useMemo, useCallback)
+- Use proper image optimization
+- Implement proper bundle splitting
+- Use proper caching strategies
+- Implement proper lazy loading
+
+## 🧪 Testing Strategy
+
+### Unit Testing
+- Test component behavior in isolation
+- Use proper mocking for external dependencies
+- Test user interactions and events
+- Implement proper snapshot testing
+- Use proper test utilities (React Testing Library)
+
+### Integration Testing
+- Test component integration
+- Test routing and navigation
+- Test form submissions and validation
+- Implement proper E2E testing
+- Use proper test data management
+
+## 📱 Responsive Design
+
+### Mobile-First Approach
+- Design for mobile devices first
+- Use proper breakpoints and media queries
+- Implement proper touch interactions
+- Use proper viewport meta tags
+- Implement proper PWA features
+
+### Accessibility
+- Follow WCAG guidelines
+- Implement proper keyboard navigation
+- Use proper color contrast ratios
+- Implement proper screen reader support
+- Use proper semantic HTML
+
+## 📚 References
+- React Documentation: https://react.dev/
+- Vue.js Documentation: https://vuejs.org/
+- Angular Documentation: https://angular.io/
+- Web Accessibility Guidelines: https://www.w3.org/WAI/
+description: Frontend development guidelines for PDD projects
+globs: ["**/*.tsx", "**/*.jsx", "**/*.vue", "**/*.ts", "**/*.js"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---

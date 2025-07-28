@@ -1,0 +1,146 @@
+# CI/CD Pipeline Rules
+
+## 🚀 Pipeline Structure
+
+### Build Stage
+- Compile and build application
+- Run static code analysis
+- Execute unit tests
+- Generate code coverage reports
+- Create build artifacts
+
+### Test Stage
+- Run integration tests
+- Execute E2E tests
+- Perform security scanning
+- Run performance tests
+- Validate deployment artifacts
+
+### Deploy Stage
+- Deploy to staging environment
+- Run smoke tests
+- Perform user acceptance testing
+- Deploy to production
+- Monitor deployment health
+
+## 🛠️ CI/CD Tools
+
+### Build Tools
+- **GitHub Actions**: GitHub-based CI/CD
+- **GitLab CI**: GitLab-based CI/CD
+- **Jenkins**: Self-hosted CI/CD
+- **CircleCI**: Cloud-based CI/CD
+- **Azure DevOps**: Microsoft CI/CD
+
+### Container Tools
+- **Docker**: Containerization
+- **Kubernetes**: Container orchestration
+- **Helm**: Kubernetes package manager
+- **Docker Compose**: Multi-container applications
+- **Buildah**: Container building
+
+### Deployment Tools
+- **Terraform**: Infrastructure as Code
+- **Ansible**: Configuration management
+- **AWS CodeDeploy**: AWS deployment
+- **Azure App Service**: Azure deployment
+- **Google Cloud Run**: GCP deployment
+
+## 📋 Pipeline Configuration
+
+### Environment Management
+- Use environment-specific configurations
+- Implement proper secret management
+- Use feature flags for deployments
+- Maintain environment parity
+- Implement proper rollback strategies
+
+### Security Integration
+- Scan for vulnerabilities in dependencies
+- Implement security testing in pipeline
+- Use secure artifact storage
+- Implement proper access controls
+- Monitor security compliance
+
+### Quality Gates
+- Automated test execution
+- Code coverage thresholds
+- Security scan results
+- Performance benchmarks
+- Code quality metrics
+
+## 🔄 Deployment Strategies
+
+### Blue-Green Deployment
+- Deploy new version alongside existing
+- Switch traffic when ready
+- Enable quick rollback
+- Minimize downtime
+- Test in production-like environment
+
+### Canary Deployment
+- Deploy to small subset of users
+- Monitor performance and errors
+- Gradually increase traffic
+- Rollback if issues detected
+- Validate in production
+
+### Rolling Deployment
+- Deploy incrementally across instances
+- Maintain service availability
+- Monitor deployment progress
+- Implement health checks
+- Enable automatic rollback
+
+## 📊 Monitoring and Observability
+
+### Application Monitoring
+- Monitor application performance
+- Track error rates and exceptions
+- Monitor user experience metrics
+- Implement proper logging
+- Use distributed tracing
+
+### Infrastructure Monitoring
+- Monitor server resources
+- Track network performance
+- Monitor database performance
+- Implement alerting systems
+- Use infrastructure as code
+
+### Business Metrics
+- Track business KPIs
+- Monitor user engagement
+- Track conversion rates
+- Implement A/B testing
+- Use analytics tools
+
+## 🔐 Security and Compliance
+
+### Security Scanning
+- Dependency vulnerability scanning
+- Container image scanning
+- Infrastructure security scanning
+- Code security analysis
+- Compliance checking
+
+### Access Control
+- Implement proper IAM policies
+- Use least privilege principle
+- Implement audit logging
+- Use secure communication
+- Monitor access patterns
+
+## 📚 References
+- Continuous Delivery by Jez Humble and David Farley
+- The Phoenix Project by Gene Kim
+- DevOps Handbook by Gene Kim, Jez Humble, Patrick Debois, and John Willis
+- GitHub Actions Documentation: https://docs.github.com/en/actions
+description: CI/CD pipeline and deployment strategies for PDD projects
+globs: ["**/.github/**", "**/.gitlab-ci.yml", "**/Jenkinsfile", "**/docker-compose.yml", "**/Dockerfile"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---

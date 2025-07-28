@@ -1,0 +1,75 @@
+# Domain Architecture Rules
+
+## 🏗️ Domain-Driven Design Principles
+
+### Bounded Contexts
+- Define clear boundaries between different business domains
+- Use consistent naming conventions for bounded contexts
+- Implement context mapping strategies (Customer-Supplier, Conformist, etc.)
+- Maintain clear interfaces between contexts
+
+### Domain Models
+- Use rich domain models with business logic encapsulated
+- Implement value objects for immutable concepts
+- Use entities with clear identity and lifecycle
+- Apply aggregate patterns for consistency boundaries
+
+### Ubiquitous Language
+- Use consistent terminology across code, documentation, and conversations
+- Align code structure with business concepts
+- Maintain a shared vocabulary between developers and domain experts
+
+## 🎯 Architecture Patterns
+
+### Hexagonal Architecture
+- Separate business logic from infrastructure concerns
+- Use ports and adapters for external dependencies
+- Maintain dependency inversion principles
+- Keep domain logic independent of frameworks
+
+### Clean Architecture
+- Organize code in layers (Domain, Application, Infrastructure, Presentation)
+- Dependencies point inward toward the domain
+- Use interfaces for external dependencies
+- Maintain separation of concerns
+
+## 📋 Implementation Guidelines
+
+### Code Organization
+- Group code by bounded context, not by technical layers
+- Use feature-based folder structure within contexts
+- Keep related functionality together
+- Maintain clear boundaries between contexts
+
+### Naming Conventions
+- Use domain terminology in class and method names
+- Prefix interfaces with 'I' (C#) or use descriptive names
+- Use consistent naming for similar concepts across contexts
+- Avoid technical implementation details in public APIs
+
+## 🔗 Context Integration
+
+### Event-Driven Communication
+- Use domain events for cross-context communication
+- Implement event sourcing where appropriate
+- Maintain eventual consistency between contexts
+- Use message queues for reliable event delivery
+
+### API Design
+- Design APIs around domain concepts
+- Use RESTful principles for HTTP APIs
+- Implement proper error handling and status codes
+- Maintain backward compatibility when possible
+
+## 📚 References
+- Domain-Driven Design by Eric Evans
+- Implementing Domain-Driven Design by Vaughn Vernon
+- Clean Architecture by Robert C. Martin
+description: Domain architecture and DDD principles for PDD projects
+globs: ["**/*.ts", "**/*.js", "**/*.py", "**/*.java", "**/*.cs"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---

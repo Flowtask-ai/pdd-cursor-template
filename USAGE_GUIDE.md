@@ -36,25 +36,25 @@ pdd-cursor-template/
 │       └── 📁 templates/                 # AI templates
 │           └── 📄 prp-base.mdc           # Base template for PRP generation
 │
-├── 📁 PRDs/                       # Product Requirements Documents
-│   ├── 📁 templates/              # Templates for each use case
-│   │   ├── 📄 new-bc-XXX.md       # Template for new bounded contexts
-│   │   ├── 📄 new-feature-YYY-bc-XXX.md  # Template for new features
-│   │   └── 📄 improve-bc-XXX.md   # Template for BC improvements
-│   ├── 📁 examples/               # Filled examples for inspiration
-│   │   ├── 📄 new-bc-ecommerce.md # Example: Complete e-commerce project
-│   │   ├── 📄 new-feature-notifications-bc-auth.md  # Example: Notifications feature
-│   │   └── 📄 improve-bc-auth.md  # Example: Auth system improvements
-│   └── (Your PRDs will appear here)
-│
-├── 📁 PRPs/                       # Product Requirements Prompts (generated)
-│   ├── 📁 commands/               # Commands for generate/execute PRPs
-│   │   ├── 📄 generate-prp.md     # Prompt to generate a PRP
-│   │   └── 📄 execute-prp.md      # Prompt to execute a PRP
-│   └── (Your generated PRPs will appear here)
-│
-├── 📁 examples/                   # Code examples and patterns
-│   └── 📄 README.md               # Guide for organizing examples
+├── 📁 PDD/                        # Prompt Driven Design
+│   ├── 📁 PRDs/                   # Product Requirements Documents
+│   │   ├── 📁 templates/          # Templates for each use case
+│   │   │   ├── 📄 new-bc-XXX.md   # Template for new bounded contexts
+│   │   │   ├── 📄 new-feature-YYY-bc-XXX.md  # Template for new features
+│   │   │   └── 📄 improve-bc-XXX.md  # Template for BC improvements
+│   │   ├── 📁 examples/           # Filled examples for inspiration
+│   │   │   ├── 📄 new-bc-ecommerce.md # Example: Complete e-commerce project
+│   │   │   ├── 📄 new-feature-notifications-bc-auth.md  # Example: Notifications feature
+│   │   │   └── 📄 improve-bc-auth.md  # Example: Auth system improvements
+│   │   └── (Your PRDs will appear here)
+│   │
+│   └── 📁 PRPs/                   # Product Requirements Prompts (generated)
+│       ├── 📁 templates/          # Templates for PRPs
+│       │   └── 📄 prp-base.mdc    # Base template for generating PRPs
+│       ├── 📁 commands/           # Commands for generate/execute PRPs
+│       │   ├── 📄 generate-prp.md # Prompt to generate a PRP
+│       │   └── 📄 execute-prp.md  # Prompt to execute a PRP
+│       └── (Your generated PRPs will appear here)
 │
 └── 📁 .github/                    # GitHub configuration
     └── 📁 ISSUE_TEMPLATE/         # Issue templates for contributions
@@ -70,14 +70,14 @@ pdd-cursor-template/
 - **`GLOBAL_RULES.md`**: Human-readable rules that mirror the AI rules
 
 #### **📄 Templates & Examples**
-- **`PRDs/templates/`**: Templates for each use case (new BC, new feature, improve BC)
-- **`PRDs/examples/`**: Filled examples for inspiration and reference
-- **`examples/`**: Your code patterns and reference implementations
+- **`PDD/PRDs/templates/`**: Templates for each use case (new BC, new feature, improve BC)
+- **`PDD/PRDs/examples/`**: Filled examples for inspiration and reference
+- **`.cursor/rules/pattern-examples/`**: Code patterns and reference implementations
 
 #### **🤖 AI Configuration**
 - **`.cursor/rules/`**: Automatic context for Cursor's AI (always active)
-- **`PRPs/commands/`**: Manual prompts you can copy-paste to trigger specific actions
-- **`PRPs/`**: Where generated Product Requirements Prompts are stored
+- **`PDD/PRPs/commands/`**: Manual prompts you can copy-paste to trigger specific actions
+- **`PDD/PRPs/`**: Where generated Product Requirements Prompts are stored
 
 #### **⚙️ Project Configuration**
 - **`package.json`**: Project metadata, useful for publishing and dependencies
@@ -86,10 +86,10 @@ pdd-cursor-template/
 
 ### 🎯 How It All Works Together:
 
-1. **Setup**: Configure `GLOBAL_RULES.md` and add examples to `examples/`
-2. **Create PRD**: Choose appropriate template from `PRDs/templates/` and fill it out
-3. **Generate PRP**: Use `PRPs/commands/generate-prp.md` to create implementation plan
-4. **Execute**: Use `PRPs/commands/execute-prp.md` to implement following all rules and validations
+1. **Setup**: Configure `GLOBAL_RULES.md` and review patterns in `.cursor/rules/pattern-examples/`
+2. **Create PRD**: Choose appropriate template from `PDD/PRDs/templates/` and fill it out
+3. **Generate PRP**: Use `PDD/PRPs/commands/generate-prp.md` to create implementation plan
+4. **Execute**: Use `PDD/PRPs/commands/execute-prp.md` to implement following all rules and validations
 5. **Validate**: AI automatically runs tests and fixes issues based on rules
 
 ---
@@ -147,7 +147,7 @@ examples/
 
 #### Step 1: Create PRD
 
-Copy and edit `PRDs/templates/new-bc-XXX.md`:
+Copy and edit `PDD/PRDs/templates/new-bc-XXX.md`:
 
 ```markdown
 # New Bounded Context: User Management System
@@ -177,10 +177,10 @@ Copy and edit `PRDs/templates/new-bc-XXX.md`:
 
 #### Step 2: Generate PRP
 
-Use the command from `PRPs/commands/generate-prp.md`:
+Use the command from `PDD/PRPs/commands/generate-prp.md`:
 
 ```
-Generate a PRP following the project rules, taking as reference PRDs/new-bc-user-management.md and examples in examples/. The PRP should include:
+Generate a PRP following the project rules, taking as reference PDD/PRDs/new-bc-user-management.md and patterns in .cursor/rules/pattern-examples/. The PRP should include:
 
 1. System architecture
 2. File structure
@@ -191,10 +191,10 @@ Generate a PRP following the project rules, taking as reference PRDs/new-bc-user
 
 #### Step 3: Execute Implementation
 
-Use the command from `PRPs/commands/execute-prp.md`:
+Use the command from `PDD/PRPs/commands/execute-prp.md`:
 
 ```
-Execute the PRP in PRPs/user-management-system.md following all validations and project rules. Make sure all tests pass.
+Execute the PRP in PDD/PRPs/user-management-system.md following all validations and project rules. Make sure all tests pass.
 ```
 
 ---
@@ -208,9 +208,9 @@ Execute the PRP in PRPs/user-management-system.md following all validations and 
 **Steps**:
 1. **Configure rules**: Edit `GLOBAL_RULES.md` with your tech stack
 2. **Add examples**: Create basic examples in `examples/`
-3. **Create PRD**: Copy `PRDs/templates/new-bc-XXX.md` and fill it out
-4. **Generate PRP**: Use `PRPs/commands/generate-prp.md` to create implementation plan
-5. **Execute**: Use `PRPs/commands/execute-prp.md` to build the system
+3. **Create PRD**: Copy `PDD/PRDs/templates/new-bc-XXX.md` and fill it out
+4. **Generate PRP**: Use `PDD/PRPs/commands/generate-prp.md` to create implementation plan
+5. **Execute**: Use `PDD/PRPs/commands/execute-prp.md` to build the system
 
 **Example prompt**:
 ```
@@ -223,7 +223,7 @@ Generate a PRP to create a complete task management application with FastAPI bac
 
 **Steps**:
 1. **Analyze code**: "Analyze existing code and generate a refactoring plan"
-2. **Create PRD**: Use `PRDs/templates/improve-bc-XXX.md` to describe improvements
+2. **Create PRD**: Use `PDD/PRDs/templates/improve-bc-XXX.md` to describe improvements
 3. **Generate PRP**: "Generate a PRP to refactor following best practices"
 4. **Execute incrementally**: "Execute the PRP step by step, validating each change"
 
@@ -237,7 +237,7 @@ Analyze the current authentication system and generate a PRP to improve security
 **Situation**: Well-structured project, add new feature to existing bounded context.
 
 **Steps**:
-1. **Define feature**: Use `PRDs/templates/new-feature-YYY-bc-XXX.md` for the new functionality
+1. **Define feature**: Use `PDD/PRDs/templates/new-feature-YYY-bc-XXX.md` for the new functionality
 2. **Generate specific PRP**: "Generate a PRP for this specific feature"
 3. **Execute with validation**: "Execute the PRP ensuring it doesn't break existing functionality"
 

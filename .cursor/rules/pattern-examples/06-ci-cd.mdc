@@ -1,0 +1,95 @@
+# CI/CD Patterns and Examples
+
+## 🚀 Pipeline Patterns
+
+### GitHub Actions Workflow
+```yaml
+# .github/workflows/ci.yml
+name: CI
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build
+```
+
+### Dockerfile Pattern
+```dockerfile
+# Dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+### Kubernetes Deployment Pattern
+```yaml
+# k8s/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-app
+          image: my-app:latest
+          ports:
+            - containerPort: 3000
+```
+
+## 🔄 Deployment Strategies
+
+### Blue-Green Deployment
+- Deploy new version alongside existing
+- Switch traffic when ready
+- Enable quick rollback
+
+### Canary Deployment
+- Deploy to small subset of users
+- Monitor performance and errors
+- Gradually increase traffic
+
+### Rolling Deployment
+- Deploy incrementally across instances
+- Maintain service availability
+
+## 📚 References
+- GitHub Actions Documentation: https://docs.github.com/en/actions
+- Docker Documentation: https://docs.docker.com/
+- Kubernetes Documentation: https://kubernetes.io/docs/
+description: CI/CD patterns and examples for PDD projects
+globs: ["**/.github/**", "**/.gitlab-ci.yml", "**/Jenkinsfile", "**/docker-compose.yml", "**/Dockerfile"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---

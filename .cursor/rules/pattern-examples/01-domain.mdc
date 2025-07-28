@@ -1,0 +1,300 @@
+# Domain Patterns and Examples
+
+## 🏗️ Domain Model Patterns
+
+### Entity Pattern
+```typescript
+// User Entity Example
+class User {
+  private id: UserId;
+  private email: Email;
+  private password: PasswordHash;
+  private profile: UserProfile;
+
+  constructor(id: UserId, email: Email, password: PasswordHash) {
+    this.id = id;
+    this.email = email;
+    this.password = password;
+    this.profile = new UserProfile();
+  }
+
+  updateEmail(newEmail: Email): void {
+    this.email = newEmail;
+    this.addDomainEvent(new UserEmailChangedEvent(this.id, newEmail));
+  }
+
+  changePassword(newPassword: PasswordHash): void {
+    this.password = newPassword;
+    this.addDomainEvent(new UserPasswordChangedEvent(this.id));
+  }
+}
+```
+
+### Value Object Pattern
+```typescript
+// Email Value Object Example
+class Email {
+  private readonly value: string;
+
+  constructor(email: string) {
+    if (!this.isValid(email)) {
+      throw new Error('Invalid email format');
+    }
+    this.value = email.toLowerCase();
+  }
+
+  private isValid(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  toString(): string {
+    return this.value;
+  }
+
+  equals(other: Email): boolean {
+    return this.value === other.value;
+  }
+}
+```
+
+### Aggregate Pattern
+```typescript
+// Order Aggregate Example
+class Order {
+  private id: OrderId;
+  private customerId: CustomerId;
+  private items: OrderItem[];
+  private status: OrderStatus;
+  private total: Money;
+
+  constructor(id: OrderId, customerId: CustomerId) {
+    this.id = id;
+    this.customerId = customerId;
+    this.items = [];
+    this.status = OrderStatus.DRAFT;
+    this.total = Money.ZERO;
+  }
+
+  addItem(productId: ProductId, quantity: Quantity, price: Money): void {
+    const item = new OrderItem(productId, quantity, price);
+    this.items.push(item);
+    this.recalculateTotal();
+  }
+
+  confirm(): void {
+    if (this.items.length === 0) {
+      throw new Error('Cannot confirm empty order');
+    }
+    this.status = OrderStatus.CONFIRMED;
+    this.addDomainEvent(new OrderConfirmedEvent(this.id));
+  }
+
+  private recalculateTotal(): void {
+    this.total = this.items.reduce(
+      (sum, item) => sum.add(item.getSubtotal()),
+      Money.ZERO
+    );
+  }
+}
+```
+
+## 🔄 Domain Event Patterns
+
+### Domain Event
+```typescript
+// Domain Event Base Class
+abstract class DomainEvent {
+  public readonly occurredOn: Date;
+  public readonly eventId: string;
+
+  constructor() {
+    this.occurredOn = new Date();
+    this.eventId = generateId();
+  }
+
+  abstract getEventName(): string;
+}
+
+// Specific Domain Event
+class UserRegisteredEvent extends DomainEvent {
+  constructor(
+    public readonly userId: UserId,
+    public readonly email: Email
+  ) {
+    super();
+  }
+
+  getEventName(): string {
+    return 'UserRegistered';
+  }
+}
+```
+
+### Event Handler
+```typescript
+// Event Handler Example
+class UserRegisteredEventHandler {
+  constructor(
+    private emailService: EmailService,
+    private auditService: AuditService
+  ) {}
+
+  async handle(event: UserRegisteredEvent): Promise<void> {
+    // Send welcome email
+    await this.emailService.sendWelcomeEmail(event.email);
+    
+    // Log audit event
+    await this.auditService.logUserRegistration(event.userId);
+  }
+}
+```
+
+## 🏛️ Repository Pattern
+
+### Repository Interface
+```typescript
+// Repository Interface
+interface UserRepository {
+  findById(id: UserId): Promise<User | null>;
+  findByEmail(email: Email): Promise<User | null>;
+  save(user: User): Promise<void>;
+  delete(id: UserId): Promise<void>;
+}
+
+// Repository Implementation
+class SqlUserRepository implements UserRepository {
+  constructor(private db: Database) {}
+
+  async findById(id: UserId): Promise<User | null> {
+    const userData = await this.db.query(
+      'SELECT * FROM users WHERE id = ?',
+      [id.toString()]
+    );
+    
+    if (!userData) return null;
+    
+    return this.mapToUser(userData);
+  }
+
+  async save(user: User): Promise<void> {
+    const userData = this.mapToUserData(user);
+    await this.db.query(
+      'INSERT INTO users (id, email, password) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE email = ?, password = ?',
+      [userData.id, userData.email, userData.password, userData.email, userData.password]
+    );
+  }
+
+  private mapToUser(data: any): User {
+    return new User(
+      new UserId(data.id),
+      new Email(data.email),
+      new PasswordHash(data.password)
+    );
+  }
+}
+```
+
+## 🎯 Service Layer Pattern
+
+### Domain Service
+```typescript
+// Domain Service Example
+class UserRegistrationService {
+  constructor(
+    private userRepository: UserRepository,
+    private passwordHasher: PasswordHasher,
+    private eventBus: EventBus
+  ) {}
+
+  async registerUser(email: Email, plainPassword: string): Promise<UserId> {
+    // Check if user already exists
+    const existingUser = await this.userRepository.findByEmail(email);
+    if (existingUser) {
+      throw new Error('User already exists');
+    }
+
+    // Create new user
+    const userId = new UserId(generateId());
+    const passwordHash = await this.passwordHasher.hash(plainPassword);
+    const user = new User(userId, email, passwordHash);
+
+    // Save user
+    await this.userRepository.save(user);
+
+    // Publish domain event
+    await this.eventBus.publish(new UserRegisteredEvent(userId, email));
+
+    return userId;
+  }
+}
+```
+
+## 📋 Factory Pattern
+
+### Domain Factory
+```typescript
+// User Factory Example
+class UserFactory {
+  static createUser(email: string, plainPassword: string): User {
+    const userId = new UserId(generateId());
+    const emailVO = new Email(email);
+    const passwordHash = new PasswordHash(plainPassword); // This would hash the password
+
+    return new User(userId, emailVO, passwordHash);
+  }
+
+  static createGuestUser(): User {
+    const userId = new UserId(generateId());
+    const email = new Email(`guest-${generateId()}@example.com`);
+    const passwordHash = new PasswordHash(''); // Empty for guest
+
+    return new User(userId, email, passwordHash);
+  }
+}
+```
+
+## 🔗 Specification Pattern
+
+### Domain Specification
+```typescript
+// Specification Interface
+interface Specification<T> {
+  isSatisfiedBy(candidate: T): boolean;
+  and(other: Specification<T>): Specification<T>;
+  or(other: Specification<T>): Specification<T>;
+  not(): Specification<T>;
+}
+
+// User Specification Example
+class ActiveUserSpecification implements Specification<User> {
+  isSatisfiedBy(user: User): boolean {
+    return user.isActive() && !user.isSuspended();
+  }
+
+  and(other: Specification<User>): Specification<User> {
+    return new AndSpecification(this, other);
+  }
+
+  or(other: Specification<User>): Specification<User> {
+    return new OrSpecification(this, other);
+  }
+
+  not(): Specification<User> {
+    return new NotSpecification(this);
+  }
+}
+```
+
+## 📚 References
+- Domain-Driven Design by Eric Evans
+- Implementing Domain-Driven Design by Vaughn Vernon
+- Clean Architecture by Robert C. Martin
+description: Domain patterns and examples for PDD projects
+globs: ["**/*.ts", "**/*.js", "**/*.py", "**/*.java", "**/*.cs"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---

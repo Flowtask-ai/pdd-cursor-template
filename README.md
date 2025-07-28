@@ -334,9 +334,9 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 **Scope**: Complete application with multiple features
 
 **Workflow**:
-1. **Create PRD**: Use `PRDs/templates/new-bc-XXX.md` to define your project
-2. **Generate PRP**: Use `PRPs/commands/generate-prp.md` to create implementation plan
-3. **Execute Foundation**: Use `PRPs/commands/execute-prp.md` to build the system
+1. **Create PRD**: Use `PDD/PRDs/templates/new-bc-XXX.md` to define your project
+2. **Generate PRP**: Use `PDD/PRPs/commands/generate-prp.md` to create implementation plan
+3. **Execute Foundation**: Use `PDD/PRPs/commands/execute-prp.md` to build the system
 4. **Iterate**: Add features incrementally using the same methodology
 
 **Example**: *"Create a complete e-commerce platform with React frontend, FastAPI backend, PostgreSQL database, and payment integration"*
@@ -349,7 +349,7 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 **Scope**: Single feature or module within existing architecture
 
 **Workflow**:
-1. **Create PRD**: Use `PRDs/templates/new-feature-YYY-bc-XXX.md` for specific functionality
+1. **Create PRD**: Use `PDD/PRDs/templates/new-feature-YYY-bc-XXX.md` for specific functionality
 2. **Generate Feature PRP**: Create focused implementation plan
 3. **Execute with Validation**: Implement ensuring no breaking changes
 4. **Integrate**: Connect with existing systems and validate
@@ -364,7 +364,7 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 **Scope**: Code quality, architecture improvements, technical debt
 
 **Workflow**:
-1. **Create PRD**: Use `PRDs/templates/improve-bc-XXX.md` to define improvements
+1. **Create PRD**: Use `PDD/PRDs/templates/improve-bc-XXX.md` to define improvements
 2. **Generate Improvement Plan**: Create refactoring PRP with specific goals
 3. **Execute Incrementally**: Apply improvements step by step
 4. **Validate Continuously**: Ensure no regressions during improvements
@@ -378,9 +378,9 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 
 | Scenario | Template File | AI Approach | Expected Outcome |
 |----------|---------------|-------------|------------------|
-| **New BC** | `PRDs/templates/new-bc-XXX.md` | Architect + Developer roles | Complete project foundation |
-| **New Feature** | `PRDs/templates/new-feature-YYY-bc-XXX.md` | Developer role | Integrated feature |
-| **Improve BC** | `PRDs/templates/improve-bc-XXX.md` | Architect + Developer roles | Enhanced codebase |
+| **New BC** | `PDD/PRDs/templates/new-bc-XXX.md` | Architect + Developer roles | Complete project foundation |
+| **New Feature** | `PDD/PRDs/templates/new-feature-YYY-bc-XXX.md` | Developer role | Integrated feature |
+| **Improve BC** | `PDD/PRDs/templates/improve-bc-XXX.md` | Architect + Developer roles | Enhanced codebase |
 
 ### 💡 **Pro Tips for Each Use Case**
 

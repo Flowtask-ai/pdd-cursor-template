@@ -1,0 +1,199 @@
+# Frontend Patterns and Examples
+
+## 🏗️ Component Patterns
+
+### Functional Component with Hooks
+```typescript
+// React Functional Component
+const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const userData = await userService.getUser(userId);
+        setUser(userData);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, [userId]);
+
+  if (loading) return <LoadingSpinner />;
+  if (error) return <ErrorMessage message={error} />;
+  if (!user) return <NotFound />;
+
+  return (
+    <div className="user-profile">
+      <h1>{user.name}</h1>
+      <p>{user.email}</p>
+    </div>
+  );
+};
+```
+
+### Custom Hook Pattern
+```typescript
+// Custom Hook for API Calls
+const useApi = <T>(url: string) => {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [url]);
+
+  return { data, loading, error };
+};
+```
+
+## 🎨 State Management Patterns
+
+### Context API Pattern
+```typescript
+// User Context
+const UserContext = createContext<UserContextType | undefined>(undefined);
+
+export const UserProvider: React.FC = ({ children }) => {
+  const [user, setUser] = useState<User | null>(null);
+
+  const login = async (credentials: LoginCredentials) => {
+    const userData = await authService.login(credentials);
+    setUser(userData);
+  };
+
+  const logout = () => {
+    setUser(null);
+  };
+
+  return (
+    <UserContext.Provider value={{ user, login, logout }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
+```
+
+### Redux Toolkit Pattern
+```typescript
+// Redux Slice
+const userSlice = createSlice({
+  name: 'user',
+  initialState: {
+    user: null,
+    loading: false,
+    error: null
+  },
+  reducers: {
+    setUser: (state, action) => {
+      state.user = action.payload;
+    },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
+    },
+    setError: (state, action) => {
+      state.error = action.payload;
+    }
+  }
+});
+```
+
+## 📱 Form Patterns
+
+### Controlled Component Pattern
+```typescript
+// Controlled Form Component
+const LoginForm: React.FC = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const validationErrors = validateForm(formData);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    // Submit form
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        className={errors.email ? 'error' : ''}
+      />
+      {errors.email && <span className="error">{errors.email}</span>}
+    </form>
+  );
+};
+```
+
+## 🔧 Performance Patterns
+
+### Memoization Pattern
+```typescript
+// Memoized Component
+const ExpensiveComponent = React.memo<ExpensiveComponentProps>(({ data }) => {
+  const processedData = useMemo(() => {
+    return data.map(item => ({
+      ...item,
+      processed: heavyComputation(item)
+    }));
+  }, [data]);
+
+  return (
+    <div>
+      {processedData.map(item => (
+        <DataItem key={item.id} item={item} />
+      ))}
+    </div>
+  );
+});
+```
+
+## 📚 References
+- React Documentation: https://react.dev/
+- Vue.js Documentation: https://vuejs.org/
+- Angular Documentation: https://angular.io/
+description: Frontend patterns and examples for PDD projects
+globs: ["**/*.tsx", "**/*.jsx", "**/*.vue", "**/*.ts", "**/*.js"]
+alwaysApply: false
+---
+description:
+globs:
+alwaysApply: false
+---
