@@ -4,10 +4,85 @@ A step-by-step guide to use this template and apply the PDD (Prompt Driven Desig
 
 ## 📋 Table of Contents
 
-1. [Initial Setup](#initial-setup)
-2. [Basic Workflow](#basic-workflow)
-3. [Specific Use Cases](#specific-use-cases)
-4. [Troubleshooting](#troubleshooting)
+1. [Project Structure](#project-structure)
+2. [Initial Setup](#initial-setup)
+3. [Basic Workflow](#basic-workflow)
+4. [Specific Use Cases](#specific-use-cases)
+5. [Troubleshooting](#troubleshooting)
+
+---
+
+## 📁 Project Structure
+
+Understanding the template structure is crucial for effective use. Here's what each folder and file contains:
+
+```
+pdd-cursor-template/
+├── 📄 README.md                    # Main documentation and overview
+├── 📄 USAGE_GUIDE.md              # This guide - step-by-step instructions
+├── 📄 GLOBAL_RULES.md             # Human-readable project rules and conventions
+├── 📄 FEATURE_REQUEST.md          # Template for defining new features
+├── 📄 FEATURE_REQUEST_EXAMPLE.md  # Example of a completed feature request
+├── 📄 LICENSE                     # MIT License (Flowtask-ai + Cole Medin attribution)
+├── 📄 package.json                # Project metadata and dependencies
+│
+├── 📁 .cursor/
+│   └── 📁 rules/                  # Cursor Rules (automatic AI context)
+│       ├── 📄 00-project-global.mdc      # Global project rules for AI
+│       ├── 📄 01-feature-request.mdc     # Rules for feature request interpretation
+│       ├── 📄 02-prp-generator.mdc       # Rules for PRP generation
+│       ├── 📄 03-prp-executor.mdc        # Rules for PRP execution
+│       ├── 📁 roles/                     # Specialized AI roles
+│       │   ├── 📄 01-architect.mdc       # Architecture-focused AI behavior
+│       │   └── 📄 02-developer.mdc       # Development-focused AI behavior
+│       └── 📁 templates/                 # AI templates
+│           └── 📄 prp-base.mdc           # Base template for PRP generation
+│
+├── 📁 prompts/                    # Predefined prompts for manual execution
+│   ├── 📄 generate-prp.md         # Prompt to generate a PRP
+│   └── 📄 execute-prp.md          # Prompt to execute a PRP
+│
+├── 📁 examples/                   # Code examples and patterns
+│   └── 📄 README.md               # Guide for organizing examples
+│
+├── 📁 PRPs/                       # Generated Product Requirements Prompts
+│   └── (Your generated PRPs will appear here)
+│
+└── 📁 .github/                    # GitHub configuration
+    └── 📁 ISSUE_TEMPLATE/         # Issue templates for contributions
+        ├── 📄 bug_report.md       # Template for bug reports
+        └── 📄 feature_request.md  # Template for feature requests
+```
+
+### 🔑 Key Files Explained:
+
+#### **📄 Core Documentation**
+- **`README.md`**: Main project overview, methodology explanation, and quick start
+- **`USAGE_GUIDE.md`**: Detailed step-by-step instructions (this file)
+- **`GLOBAL_RULES.md`**: Human-readable rules that mirror the AI rules
+
+#### **📄 Templates & Examples**
+- **`FEATURE_REQUEST.md`**: Template to describe new features you want to implement
+- **`FEATURE_REQUEST_EXAMPLE.md`**: Real example showing how to fill the template
+- **`examples/`**: Your code patterns and reference implementations
+
+#### **🤖 AI Configuration**
+- **`.cursor/rules/`**: Automatic context for Cursor's AI (always active)
+- **`prompts/`**: Manual prompts you can copy-paste to trigger specific actions
+- **`PRPs/`**: Where generated Product Requirements Prompts are stored
+
+#### **⚙️ Project Configuration**
+- **`package.json`**: Project metadata, useful for publishing and dependencies
+- **`.github/`**: GitHub templates for community contributions
+- **`LICENSE`**: MIT License with proper attribution
+
+### 🎯 How It All Works Together:
+
+1. **Setup**: Configure `GLOBAL_RULES.md` and add examples to `examples/`
+2. **Request**: Fill `FEATURE_REQUEST.md` with your feature description
+3. **Generate**: Use prompts from `prompts/` to generate a PRP in `PRPs/`
+4. **Execute**: Use prompts to execute the PRP following all rules and validations
+5. **Validate**: AI automatically runs tests and fixes issues based on rules
 
 ---
 
