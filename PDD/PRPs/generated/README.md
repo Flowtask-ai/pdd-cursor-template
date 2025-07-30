@@ -30,4 +30,4 @@ This folder contains the Product Requirements Prompts (PRPs) that are automatica
 
 ## Next Step
 
-Once your PRP is ready, execute it and follow the workflow as described in the main README and USAGE_GUIDE.md. 
+Once your PRP is ready, execute it and follow the workflow as described in the main README and PDD/USAGE_GUIDE.md. 

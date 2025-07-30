@@ -24,4 +24,4 @@ See `../examples/` for filled examples to inspire your PRDs.
 
 ## Next Step
 
-Once your PRD is ready, use the PRP generation command and continue the workflow as described in the main README and USAGE_GUIDE.md. 
+Once your PRD is ready, use the PRP generation command and continue the workflow as described in the main README and PDD/USAGE_GUIDE.md. 

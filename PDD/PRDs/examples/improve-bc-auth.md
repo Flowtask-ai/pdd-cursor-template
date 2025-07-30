@@ -37,10 +37,9 @@
 - Load testing for rate limiting validation
 
 ## 📚 Examples to Follow
-- `examples/improvements/security/` - Security improvement patterns
-- `examples/improvements/performance/` - Performance optimization patterns
-- `examples/improvements/architecture/` - Architectural refactoring patterns
-- `examples/auth/modern_jwt/` - Modern JWT implementation patterns
+- Check `PDD/PRDs/examples/` for similar improvement examples
+- Review `.cursor/rules/code-examples/` for implementation patterns
+- Reference `PDD/customization-examples/` for your specific tech stack
 
 ## 🔗 Dependencies and Risks
 **Dependencies**: Redis for rate limiting, updated dependencies, migration scripts

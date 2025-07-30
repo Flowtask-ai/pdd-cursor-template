@@ -42,9 +42,9 @@
 - [Configuration changes required]
 
 ## 📚 Examples to Follow
-- `examples/features/notifications/` - Similar feature patterns
-- `examples/api/rest_endpoints/` - API implementation patterns
-- `examples/frontend/components/` - UI component patterns
+- Check `PDD/PRDs/examples/` for similar feature examples
+- Review `.cursor/rules/code-examples/` for implementation patterns
+- Reference `PDD/customization-examples/` for your specific tech stack
 
 ## 📖 Documentation
 - [Feature-specific documentation needs]

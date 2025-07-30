@@ -57,10 +57,9 @@
 - Security testing with OWASP ZAP
 
 ## 📚 Examples to Follow
-- `examples/api/fastapi_basic/` - Backend patterns
-- `examples/frontend/react_basic/` - Frontend patterns
-- `examples/database/sqlalchemy_models/` - Data modeling patterns
-- `examples/auth/jwt_authentication/` - Authentication patterns
+- Check `PDD/PRDs/examples/` for similar project examples
+- Review `.cursor/rules/code-examples/` for implementation patterns
+- Reference `PDD/customization-examples/` for your specific tech stack
 
 ## 📖 Documentation
 - FastAPI: https://fastapi.tiangolo.com/

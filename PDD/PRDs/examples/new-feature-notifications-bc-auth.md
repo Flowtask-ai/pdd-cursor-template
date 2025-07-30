@@ -48,10 +48,9 @@
 - **Web Push Protocol**: For browser-based notifications
 
 ## 📚 Examples to Follow
-- `examples/features/notifications/` - Notification implementation patterns
-- `examples/api/rest_endpoints/` - API implementation patterns
-- `examples/frontend/components/` - UI component patterns
-- `examples/auth/jwt_authentication/` - Authentication integration patterns
+- Check `PDD/PRDs/examples/` for similar feature examples
+- Review `.cursor/rules/code-examples/` for implementation patterns
+- Reference `PDD/customization-examples/` for your specific tech stack
 
 ## 📖 Documentation
 - Firebase Cloud Messaging: https://firebase.google.com/docs/cloud-messaging

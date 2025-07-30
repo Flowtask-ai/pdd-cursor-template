@@ -119,7 +119,7 @@ A comprehensive PRP includes:
 ## Context
 - Project: E-commerce platform
 - Tech Stack: FastAPI, PostgreSQL, JWT
-- Existing patterns: examples/auth/
+- Existing patterns: `.cursor/rules/code-examples/`
 
 ## Requirements
 - User registration with email validation
@@ -216,17 +216,17 @@ pdd-cursor-template/
 ## 🎯 Workflow
 
 ### 1. Configure Global Rules
-Edit `GLOBAL_RULES.md` to define your project rules.
+Review `.cursor/rules/core-rules/` to understand the current specialization.
 
 ### 2. Create Feature Request
-Use `FEATURE_REQUEST.md` to describe what you want to build:
+Create a PRD using templates from `PDD/PRDs/templates/`:
 
 ```markdown
 ## 🎯 FEATURE
 [Describe the feature specifically]
 
 ## 📚 EXAMPLES
-[Reference examples in examples/]
+[Reference examples in PDD/PRDs/examples/]
 
 ## 📖 DOCUMENTATION
 [Include documentation URLs]
@@ -238,7 +238,7 @@ Use `FEATURE_REQUEST.md` to describe what you want to build:
 ### 3. Generate PRP
 Use the prompt:
 ```
-"Generate a PRP following the project rules, taking as reference FEATURE_REQUEST.md and examples in examples/"
+"Generate a PRP from PDD/PRDs/requests/your-file.md"
 ```
 
 The AI will create a comprehensive **Product Requirements Prompt** that includes:
@@ -394,18 +394,18 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 
 #### **For New Bounded Context**:
 - Start with MVP features first
-- Use `examples/` to establish patterns early
+- Use `PDD/PRDs/examples/` to establish patterns early
 - Focus on architecture before implementation details
 
 #### **For New Features**:
-- Reference existing `examples/` for consistency
+- Reference existing `PDD/PRDs/examples/` for consistency
 - Ensure integration with current patterns
 - Validate against existing test suite
 
 #### **For Improvements**:
 - Document current state before changes
 - Use incremental approach to avoid breaking changes
-- Update `examples/` with new best practices
+- Update `PDD/PRDs/examples/` with new best practices
 
 ## 📚 Resources
 
@@ -437,7 +437,7 @@ This project is part of [Flowtask-ai](https://github.com/Flowtask-ai), an organi
 ### 📋 Contribution Guidelines
 
 - **Follow PDD**: Use this same methodology to contribute
-- **Document Changes**: Update README.md and USAGE_GUIDE.md
+- **Document Changes**: Update README.md and PDD/USAGE_GUIDE.md
 - **Maintain Quality**: Ensure tests pass
 - **Be Specific**: Clearly describe your changes
 

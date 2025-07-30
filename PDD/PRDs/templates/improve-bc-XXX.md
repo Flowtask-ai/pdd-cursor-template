@@ -35,9 +35,9 @@
 - [Integration testing strategy]
 
 ## 📚 Examples to Follow
-- `examples/improvements/security/` - Security improvement patterns
-- `examples/improvements/performance/` - Performance optimization patterns
-- `examples/improvements/architecture/` - Architectural refactoring patterns
+- Check `PDD/PRDs/examples/` for similar improvement examples
+- Review `.cursor/rules/code-examples/` for implementation patterns
+- Reference `PDD/customization-examples/` for your specific tech stack
 
 ## 🔗 Dependencies and Risks
 **Dependencies**: [What needs to be in place before improvements?]
