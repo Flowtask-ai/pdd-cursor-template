@@ -19,8 +19,6 @@ Understanding the template structure is crucial for effective use. Here's what e
 ```
 pdd-cursor-template/
 ├── 📄 README.md                    # Main documentation and overview
-├── 📄 USAGE_GUIDE.md              # This guide - step-by-step instructions
-├── 📄 LICENSE                     # MIT License (Flowtask-ai + Cole Medin attribution)
 ├── 📄 LICENSE                     # MIT License (Flowtask-ai + Cole Medin attribution)
 ├── 📄 package.json                # Project metadata and dependencies
 │
@@ -49,6 +47,8 @@ pdd-cursor-template/
 │           └── 📄 06-ci-cd.mdc
 │
 ├── 📁 PDD/                        # Prompt Driven Design
+│   ├── 📄 USAGE_GUIDE.md          # This guide - step-by-step instructions
+│   ├── 📄 HOW_TO_CUSTOMIZE.md     # Guide for adapting to other tech stacks
 │   ├── 📁 PRDs/                   # Product Requirements Documents
 │   │   ├── 📁 templates/          # Templates for each use case
 │   │   │   ├── 📄 new-bc-XXX.md   # Template for new bounded contexts
@@ -60,12 +60,16 @@ pdd-cursor-template/
 │   │   │   └── 📄 improve-bc-auth.md  # Example: Auth system improvements
 │   │   └── 📁 requests/           # Your PRDs go here
 │   │       └── 📄 README.md       # Instructions for creating PRDs
-│   │
-│   └── 📁 PRPs/                   # Product Requirements Prompts (generated)
-│       ├── 📁 templates/          # Templates for PRPs
-│       │   └── 📄 prp-base.md    # Base template for generating PRPs
-│       └── 📁 generated/          # Generated PRPs go here
-│           └── 📄 README.md       # Instructions for generated PRPs
+│   ├── 📁 PRPs/                   # Product Requirements Prompts (generated)
+│   │   ├── 📁 templates/          # Templates for PRPs
+│   │   │   └── 📄 prp-base.md    # Base template for generating PRPs
+│   │   └── 📁 generated/          # Generated PRPs go here
+│   │       └── 📄 README.md       # Instructions for generated PRPs
+│   └── 📁 customization-examples/ # Ready-to-use adaptations for other stacks
+│       ├── 📄 README.md           # Overview of available examples
+│       ├── 📁 nodejs-express-react/
+│       ├── 📁 java-spring-vue/
+│       └── 📁 dotnet-aspnet-angular/
 │
 └── 📁 .github/                    # GitHub configuration
     └── 📁 ISSUE_TEMPLATE/         # Issue templates for contributions
@@ -77,7 +81,8 @@ pdd-cursor-template/
 
 #### **📄 Core Documentation**
 - **`README.md`**: Main project overview, methodology explanation, and quick start
-- **`USAGE_GUIDE.md`**: Detailed step-by-step instructions (this file)
+- **`PDD/USAGE_GUIDE.md`**: Detailed step-by-step instructions (this file)
+- **`PDD/HOW_TO_CUSTOMIZE.md`**: Guide for adapting to other tech stacks
 - **`.cursor/rules/core-rules/`**: AI rules that are automatically applied by Cursor
 
 #### **📄 Templates & Examples**

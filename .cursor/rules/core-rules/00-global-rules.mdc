@@ -14,8 +14,6 @@
 - **Use environment variables** for configuration
 - **Organize in modules** by feature or responsibility
 
-
-
 ## 📎 Style and Conventions
 
 - **Maximum 500 lines per file** - refactor if necessary for maintainability

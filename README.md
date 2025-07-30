@@ -6,7 +6,7 @@ A comprehensive template for **PDD (Prompt Driven Design)** specifically adapted
 
 ## 🚀 Quick Start
 
-> **📖 For a complete step-by-step guide, see [USAGE_GUIDE.md](USAGE_GUIDE.md)**
+> **📖 For a complete step-by-step guide, see [PDD/USAGE_GUIDE.md](PDD/USAGE_GUIDE.md)**
 
 ```bash
 # 1. Clone this template
@@ -38,6 +38,10 @@ cd pdd-cursor-template
 - **Code Examples**: Working patterns and implementations
 - **Validation Systems**: Automated tests and quality checks
 - **Rule-Based Guidance**: Clear conventions and standards
+
+### 🎯 Specialized for Your Stack
+
+This template comes with **Python/FastAPI/React** specialization out of the box. If you use a different tech stack, check [PDD/HOW_TO_CUSTOMIZE.md](PDD/HOW_TO_CUSTOMIZE.md) for adaptation guides and examples.
 
 ### Prompt Engineering vs Context Engineering vs PDD
 
@@ -330,6 +334,8 @@ Our **role-based development system** is conceptually inspired by the Subagents 
 
 PDD adapts to different project scenarios and complexity levels. Choose the approach that matches your current situation:
 
+> **💡 Tech Stack**: This template is specialized for Python/FastAPI/React. For other stacks, see [PDD/HOW_TO_CUSTOMIZE.md](PDD/HOW_TO_CUSTOMIZE.md).
+
 ### 🏗️ **New Bounded Context** (Complete Project)
 **When**: Starting a completely new project with frontend and backend
 **Complexity**: High - Full system architecture
@@ -406,6 +412,8 @@ PDD adapts to different project scenarios and complexity levels. Choose the appr
 - [Cursor Documentation](https://docs.cursor.com/)
 - [PDD Best Practices](https://www.philschmid.de/context-engineering)
 - [Cursor Rules Documentation](https://docs.cursor.com/context/rules)
+- [PDD Usage Guide](PDD/USAGE_GUIDE.md)
+- [Customization Guide](PDD/HOW_TO_CUSTOMIZE.md)
 
 ## 🚀 Flowtask-ai
 
